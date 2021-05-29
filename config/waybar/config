@@ -1,0 +1,108 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
+    "modules-right": [ "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network" ],
+
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format":"{name}",
+        "disable-scroll-wraparound": true,
+        "enable-bar-scroll": true,
+        "smooth-scrolling-threshold": 30
+    },
+    "sway/window": {
+        "max-length": 20,
+        "tooltip": false
+    },
+    
+    "clock": {
+        //"format": " {:%d.%m.%y %a / W: %V}",
+        "format": " {:%d.%m.%y %a}",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/storage-root": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-root.sh"
+    },
+    "custom/storage-home": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-home.sh",
+        "on-click": "ranger"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-alt-click": "click-right",
+        //"format-icons": ["", ""],
+        //"format-icons": ["", ""],
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "custom/time": {
+        "format": " {}",
+        "interval": 5,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/time.sh"
+    },
+    "tray": {
+        "icon-size": 18
+    },
+    "cpu": {
+        "tooltip": false,
+        "format": " {}%"
+    },
+    "memory": {
+        "tooltip": false,
+        "format": " {}%"
+        // "format": "{used} / {total}  "
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    }
+}
