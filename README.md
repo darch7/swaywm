@@ -1,0 +1,2 @@
+# swaywm
+# swaywm
