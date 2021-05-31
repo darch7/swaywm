@@ -18,18 +18,22 @@ seat * hide_cursor 3000
 
 # Run pure wayland
 #xwayland disable
+# no DISPLAY environment variable specified
 
 ###___________________________SETEO DE APPS FAVORITOS__________________________________
 
 # Set your terminal
-set $terminal alacritty
+set $terminal gnome-terminal
 set $lanzador rofi -modi drun -show drun -width 22
 set $editor nvim
 
-###_____________________________AUTOARRANQUES__________________________________________
+###______________________________AUTOARRANQUES__________________________________________
 
-# Start programs
+exec ~/.config/sway/autostart.sh
+exec ~/.config/sway/swaystart
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec export DISPLAY=:0
 exec mako
  
 ####__________________________ APPS ATAJOS _____________________________________________
@@ -78,7 +82,25 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway
 bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
 
 # set-Tema
-set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    #gsettings set $gnome-schema gtk-theme 'Windows-10'
+    #gsettings set $gnome-schema icon-theme 'Windows-10'
+    gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
+    gsettings set $gnome-schema document-font-name 'Roboto 11'
+    gsettings set $gnome-schema font-name 'Roboto 11'
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
+    gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
+    gsettings set org.gnome.desktop.default-applications.terminal exec gnome-terminal
+    gsettings set org.gnome.desktop.default-applications.terminal exec-arg -e
+    gsettings set org.gnome.desktop.wm.preferences button-layout ''
+	set $gnome-schema org.gnome.desktop.interface
+}
+
+exec "hash dbus-update-activation-environment 2>/dev/null; \
+     dbus-update-activation-environment --all; \
+     dbus-update-activation-environment --systemd; \
+     systemctl --user start sway-session.target"
+     
 #exec_always gsettings set $gnome-schema gtk-theme 'Arc-Dark'
 
 # Defining colors
@@ -337,6 +359,5 @@ input * {
 	xkb_layout "latam"
 	xkb_options "grp:win_space_toggle"
 }
-
 
 
