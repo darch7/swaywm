@@ -8,35 +8,40 @@
 # //computingforgeeks.com/
 # Please see https://github.com/swaywm/sway/wiki for a complete reference!
 #
-###__________________________ MODS DE SETEO ___________________________________________
+###------------------> MODS DE SETEO ___________________________________________
 set $mod Mod4
 set $mod1 Mod1
 floating_modifier $mod
 
-# Seat configuration
+# Ocultar el mouse
 seat * hide_cursor 3000
 
 # Run pure wayland
 #xwayland disable
 # no DISPLAY environment variable specified
 
-###___________________________SETEO DE APPS FAVORITOS__________________________________
+###---------------------------> SETEO DE APPS FAVORITOS__________________________________
 
 # Set your terminal
 set $terminal gnome-terminal
 set $lanzador rofi -modi drun -show drun -width 22
 set $editor nvim
 
-###______________________________AUTOARRANQUES__________________________________________
+###--------------------------------------> AUTOARRANQUES___
 
-exec ~/.config/sway/autostart.sh
-exec ~/.config/sway/swaystart
-
+exec export EDITOR='nvim'_______________________________________
+exec export `gnome-keyring-daemon --start --components=ssh`
+exec export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
+exec export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
+exec export _JAVA_AWT_WM_NONREPARENTING=1
+exec export QT_AUTO_SCREEN_SCALE_FACTOR=0
+exec export TDESKTOP_DISABLE_GTK_INTEGRATION=1
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
+exec pipewire
 exec mako
  
-####__________________________ APPS ATAJOS _____________________________________________
+####-----------------------------------------------> APPS ATAJOS _____________________________________________
 
 # Mako
 bindsym $mod+y exec makoctl dismiss
@@ -60,9 +65,13 @@ bindsym $mod+shift+n exec gnome-terminal -x $editor
 # Browser
 bindsym $mod+w exec flatpak run org.mozilla.firefox
 
-#___________________________Sway-System____________________________________________
+# Alsamixer
+bindsym $mod+c exec gnome-terminal -x alsamixer
 
-# i3-gaps
+
+###------------------------------------------------------------> Sway-System____________________________________________
+
+# sway conf gaps
 # for_window [class="^.*"] border pixel 0
 gaps inner 4
 gaps outer 4
@@ -74,12 +83,6 @@ hide_edge_borders both
 
 # reload the configuration file
 bindsym $mod+Alt+r reload
-
-# Exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
-
-# Hibernate
-bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
 
 # set-Tema
 exec_always {
@@ -182,7 +185,7 @@ bar {
 output * bg /var/home/darch/Pictures/24.jpg fill
 exec --no-startup-id /usr/lib/gsd-xsettings
 
-###_____________________________________MENU APAGADO_________________________________
+###-----------------------------------------------------------------------> MENU APAGADO_________________________________
 
 # Shutdown, Reboot, Lock Screen, and Logout 
 
@@ -192,27 +195,26 @@ mode $power_mode {
     bindsym p         exec systemctl poweroff
     bindsym r         exec systemctl reboot 
     bindsym l         exec swaylock -i ~/Pictures/22.jpg , mode "default"
-    bindsym q         exec --no-startup-id i3-msg exit, mode "default"
+    bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym h         exec systemctl hibernate 
     #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep 
     bindsym s         exec pm-suspend
-
+	
+	
+# Hibernate
+bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
 
-###____________________________________MULTIMEDIA_______________________________________________
+###---------------------------------------------------------------------------------> MULTIMEDIA_______________________________________________
 
-# Pulse Audio controls
-# run pactl list sinks
+# Pipewire Audio controls
 
-
-#amixer -D pipewire sset Master 5%- # decrease
-#amixer -D pipewire sset Master 5%+ # increase
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pipewire set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% # Raise
-bindsym XF86AudioLowerVolume exec --no-startup-id pipewire set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% # Lower
-bindsym XF86AudioMute exec pactl set-sink-mute  $(pacmd list-sinks |awk '/* index:/{print $3}') toggle # Mute
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%- unmute"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
 # Sreen brightness controls -- # https://github.com/haikarainen/light
 bindsym shift+up exec light -A 5    # increase screen brightness
@@ -229,20 +231,19 @@ bindsym Shift+Print exec --no-startup-id slurp | grim -t jpeg -q 100 -g - $HOME/
 bindsym Alt+Shift+Print exec maim -m 1 -i D-shot-ventana-activa-"$(date '+%y%m%d-%H%M-%S').png"
 
 
-###__________________________MANEJO DE VENTANAS_____________________________________
+###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS_____________________________________
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# Preseleccionar forma de ventana Horizontal
+bindsym $mod+k split h 
+# Preseleccionar forma de ventana Vertical
+bindsym $mod+l split v
 
-# split in vertical orientation
-bindsym $mod+v split v
-
-# kill focused window
+# Cerrar Ventana
 bindsym $mod+q kill
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+bindsym $mod+h focus down
 
 # bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
@@ -275,7 +276,7 @@ bindsym	$mod+o	layout tabbed
 bindsym	$mod+p	layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+s floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -286,26 +287,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-# resize
-bindsym $mod+ctrl mode "resize"
+# Resize
+bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+Down resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Up resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 5 px or 5 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -323,7 +309,7 @@ for_window [window_role="File Operation Progress"] floating enable sticky
 for_window [window_role="Save As"] floating enable
 
 for_window [class="qBittorrent" window_role="pop-up"] floating enable
-for_window [class="mtp-ng-qt" window_role="Open"] floating enable
+for_window [class="gnome-terminal -x alsamixer" window_role="Open"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 #for_window [class="VirtualBox"] floating enable
@@ -338,7 +324,7 @@ focus_on_window_activation focus
 #for_window [class="(?i)"] focus 
 
 
-###______________________________MONITORES_____________________________________________
+###-------------------------------------------------------------------------------------------------------------->_MONITORES_____________________________________________
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output eDP-1 {
@@ -354,7 +340,7 @@ input 1267:35:Elan_Touchpad {
     natural_scroll enabled
 }
 
-###________________________________KEYBOARD LAYOUT___________________________________________
+###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT___________________________________________
 input * {
 	xkb_layout "latam"
 	xkb_options "grp:win_space_toggle"

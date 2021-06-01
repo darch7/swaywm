@@ -4,7 +4,8 @@
 exec systemctl --user import-environment DISPLAY; exec systemctl --user import-environment WAYLAND_DISPLAY
 
 # Settings
-export TERMINAL='alacritty'
+export TERMINAL='gnome-terminal'
+export EDITOR='nvim'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_DATA_DIRS="$HOME/.local/share/:/usr/local/share/:/usr/share/"
@@ -52,3 +53,5 @@ export TDESKTOP_DISABLE_GTK_INTEGRATION=1
 export XDG_CURRENT_DESKTOP='sway'
 export `gnome-keyring-daemon --start --components=ssh`
 
+export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
+export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
