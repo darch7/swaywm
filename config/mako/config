@@ -13,8 +13,8 @@ icon-path=~/.local/share/fonts/Yaru-remix-dark
 max-icon-size=100
 
 border-size=2
-border-radius=0
-border-color=#464646
+border-radius=12
+border-color=#FF51DC
 
 default-timeout=5000
 

@@ -29,15 +29,19 @@ set $editor nvim
 
 ###--------------------------------------> AUTOARRANQUES___
 
-exec export EDITOR='nvim'_______________________________________
+exec export EDITOR='nvim'______________________________________
 exec export `gnome-keyring-daemon --start --components=ssh`
 exec export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
 exec export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 exec export QT_AUTO_SCREEN_SCALE_FACTOR=0
 exec export TDESKTOP_DISABLE_GTK_INTEGRATION=1
+exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
+#exec /usr/libexec/xdg-desktop-portal -r
+#exec /usr/libexec/xdg-desktop-portal-wlr -r
+exec lxpolkit
 exec pipewire
 exec mako
  
@@ -68,6 +72,8 @@ bindsym $mod+w exec flatpak run org.mozilla.firefox
 # Alsamixer
 bindsym $mod+c exec gnome-terminal -x alsamixer
 
+# Spotify
+bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
 
 ###------------------------------------------------------------> Sway-System____________________________________________
 
@@ -145,9 +151,9 @@ set $ws4 "4:四"
 set $ws5 "5:五"
 set $ws6 "6:六"
 set $ws7 "7:七"
-set $ws7 "8:八"
-set $ws7 "9:九"
-set $ws7 "0:零"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws0 "0:零"
 
 
 # switch to workspace
@@ -159,8 +165,8 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -170,9 +176,9 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
 
 
 ##bar
@@ -211,12 +217,14 @@ bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' '
 
 # Pipewire Audio controls
 
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%- unmute"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 1%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer set Master 1%- unmute"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
 # Sreen brightness controls -- # https://github.com/haikarainen/light
+bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
+bindsym XF86MonBrightnessDown exec "light -U 5"	# decrease screen brightness
 bindsym shift+up exec light -A 5    # increase screen brightness
 bindsym shift+down exec light -U 5  # decrease screen brightness
 
@@ -288,10 +296,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Resize
-bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
-bindsym $mod+Ctrl+Down resize grow height 5 px or 5 ppt
-bindsym $mod+Ctrl+Up resize shrink height 5 px or 5 ppt
-bindsym $mod+Ctrl+Right resize grow width 5 px or 5 ppt
+bindsym Ctrl+shift+Left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+shift+Down resize grow height 5 px or 5 ppt
+bindsym Ctrl+shift+Up resize shrink height 5 px or 5 ppt
+bindsym Ctrl+shift+Right resize grow width 5 px or 5 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -310,6 +318,8 @@ for_window [window_role="Save As"] floating enable
 
 for_window [class="qBittorrent" window_role="pop-up"] floating enable
 for_window [class="gnome-terminal -x alsamixer" window_role="Open"] floating enable
+for_window [class="steam_app.*"] fullscreen enable
+for_window [class="steam_app*"] inhibit_idle focus
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 #for_window [class="VirtualBox"] floating enable

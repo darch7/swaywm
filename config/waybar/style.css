@@ -7,6 +7,7 @@
     font-weight:     bold;
     box-shadow:    none;
     text-shadow:   none;
+    background: transparent;
     transition-duration: 0s;
 }
 
@@ -29,6 +30,7 @@ window#waybar.solo {
     transition: none;
     color:      rgba(217, 216, 216, 0.4);
     background: transparent;
+     border-radius: 0;
 }
 
 #workspaces button.visible {
@@ -249,7 +251,7 @@ window#waybar.solo {
     background: rgba(222, 184, 135, 0.85);
 }
 
-#mpd {
+#custom-spotify {
     margin-left: 2px;
     margin-right: 2px;
     padding-left: 5px;

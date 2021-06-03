@@ -1,10 +1,11 @@
 {
     "layer": "bottom",
     "position": "top",
-    "height": 30,
+    "width" : 10,
+    "height": 30,   
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": [ "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network" ],
+    "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network" ],
 
     "sway/mode": {
         "format": " {}"
@@ -77,8 +78,8 @@
         //"format-icons": ["", ""],
         //"format-icons": ["", ""],
         "format-icons": ["", ""],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1"
     },
     "custom/time": {
         "format": " {}",
@@ -104,5 +105,14 @@
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    }
+    },	 	 
+	  "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+   }
 }
