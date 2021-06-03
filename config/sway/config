@@ -8,7 +8,7 @@
 # //computingforgeeks.com/
 # Please see https://github.com/swaywm/sway/wiki for a complete reference!
 #
-###------------------> MODS DE SETEO ___________________________________________
+###------------------> MODS DE SETEO
 set $mod Mod4
 set $mod1 Mod1
 floating_modifier $mod
@@ -20,16 +20,16 @@ seat * hide_cursor 3000
 #xwayland disable
 # no DISPLAY environment variable specified
 
-###---------------------------> SETEO DE APPS FAVORITOS__________________________________
+###---------------------------> SETEO DE APPS FAVORITOS
 
 # Set your terminal
 set $terminal gnome-terminal
 set $lanzador rofi -modi drun -show drun -width 22
 set $editor nvim
 
-###--------------------------------------> AUTOARRANQUES___
+###--------------------------------------> AUTOARRANQUES
 
-exec export EDITOR='nvim'______________________________________
+exec export EDITOR='nvim'
 exec export `gnome-keyring-daemon --start --components=ssh`
 exec export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
 exec export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
@@ -39,13 +39,11 @@ exec export TDESKTOP_DISABLE_GTK_INTEGRATION=1
 exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
-#exec /usr/libexec/xdg-desktop-portal -r
-#exec /usr/libexec/xdg-desktop-portal-wlr -r
 exec lxpolkit
 exec pipewire
 exec mako
  
-####-----------------------------------------------> APPS ATAJOS _____________________________________________
+####-----------------------------------------------> APPS ATAJOS
 
 # Mako
 bindsym $mod+y exec makoctl dismiss
@@ -75,7 +73,7 @@ bindsym $mod+c exec gnome-terminal -x alsamixer
 # Spotify
 bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
 
-###------------------------------------------------------------> Sway-System____________________________________________
+###------------------------------------------------------------> Sway-System
 
 # sway conf gaps
 # for_window [class="^.*"] border pixel 0
@@ -191,7 +189,7 @@ bar {
 output * bg /var/home/darch/Pictures/24.jpg fill
 exec --no-startup-id /usr/lib/gsd-xsettings
 
-###-----------------------------------------------------------------------> MENU APAGADO_________________________________
+###-----------------------------------------------------------------------> MENU APAGADO
 
 # Shutdown, Reboot, Lock Screen, and Logout 
 
@@ -213,7 +211,7 @@ bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' '
     bindsym Escape    mode "default"
 }
 
-###---------------------------------------------------------------------------------> MULTIMEDIA_______________________________________________
+###---------------------------------------------------------------------------------> MULTIMEDIA
 
 # Pipewire Audio controls
 
@@ -239,7 +237,7 @@ bindsym Shift+Print exec --no-startup-id slurp | grim -t jpeg -q 100 -g - $HOME/
 bindsym Alt+Shift+Print exec maim -m 1 -i D-shot-ventana-activa-"$(date '+%y%m%d-%H%M-%S').png"
 
 
-###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS_____________________________________
+###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
 bindsym $mod+k split h 
@@ -334,7 +332,7 @@ focus_on_window_activation focus
 #for_window [class="(?i)"] focus 
 
 
-###-------------------------------------------------------------------------------------------------------------->_MONITORES_____________________________________________
+###-------------------------------------------------------------------------------------------------------------->_MONITORES
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output eDP-1 {
@@ -350,7 +348,7 @@ input 1267:35:Elan_Touchpad {
     natural_scroll enabled
 }
 
-###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT___________________________________________
+###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT
 input * {
 	xkb_layout "latam"
 	xkb_options "grp:win_space_toggle"
