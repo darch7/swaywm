@@ -38,10 +38,10 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{volume} {icon}",
-        "format-alt": "{volume} {icon}",
+        "format": "{volume} {icon} ",
+        "format-alt": "{volume} {icon} ",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": "婢",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -49,7 +49,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "墳", ""]
         },
         "scroll-step": 5,
         "on-click": "pavucontrol",
@@ -82,7 +82,7 @@
         "on-scroll-down": "light -U 1"
     },
     "custom/time": {
-        "format": " {}",
+        "format": " {}",
         "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/time.sh"
@@ -96,11 +96,11 @@
     },
     "memory": {
         "tooltip": false,
-        "format": " {}%"
+        "format": "力 {}%"
         // "format": "{used} / {total}  "
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",

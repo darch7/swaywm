@@ -16,6 +16,9 @@ floating_modifier $mod
 # Ocultar el mouse
 seat * hide_cursor 3000
 
+# Fonts
+font pango: Iconsolata 12
+
 # Run pure wayland
 #xwayland disable
 # no DISPLAY environment variable specified
@@ -29,7 +32,7 @@ set $editor nvim
 
 ###--------------------------------------> AUTOARRANQUES___
 
-exec export EDITOR='nvim'______________________________________
+exec export EDITOR='nvim'
 exec export `gnome-keyring-daemon --start --components=ssh`
 exec export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
 exec export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
@@ -39,8 +42,6 @@ exec export TDESKTOP_DISABLE_GTK_INTEGRATION=1
 exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
-#exec /usr/libexec/xdg-desktop-portal -r
-#exec /usr/libexec/xdg-desktop-portal-wlr -r
 exec lxpolkit
 exec pipewire
 exec mako
@@ -74,6 +75,9 @@ bindsym $mod+c exec gnome-terminal -x alsamixer
 
 # Spotify
 bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
+
+# Telegram
+bindsym $mod+t exec flatpak run org.telegram.desktop
 
 ###------------------------------------------------------------> Sway-System____________________________________________
 
@@ -122,7 +126,7 @@ set {
 	$orange		#ff8700
 	$silver		#e4e4e4
 	$elegant	#1b1d1e
-	$transparent	#000000
+	$transparent	#FF000000
 	#$transparent	#0000007f
 }
 
@@ -140,11 +144,10 @@ client.placeholder	$elegant	$magenta	$silver		$white		$magenta
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-font pango: Inconsolata 12
 
 # Workspace Variables
 
-set $ws1 "1:一"
+set $ws1 "1:"
 set $ws2 "2:二"
 set $ws3 "3:三"
 set $ws4 "4:四"

@@ -2,8 +2,8 @@
 * {
     border:        none;
     border-radius: 0;
-    font-family:   Inconsolata;
-    font-size:     17px;
+    font-family:   MesloLGLDZ Nerd Font;
+    font-size:     14px;
     font-weight:     bold;
     box-shadow:    none;
     text-shadow:   none;
@@ -21,7 +21,7 @@ window#waybar.solo {
 }
 
 #workspaces {
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(40, 42, 54, 0.85);
     transition: none;
 }
