@@ -1,0 +1,8 @@
+## Para mi conf de sway use mucho del ya instalado fedora silverblue asi que
+aproveché sus apps y confs de temas por eso los paquetes que ocupos son muy
+pocos. 
+
+rpm-ostree install sway waybar swaylock neovim ranger mako light rofi
+
+
+las fonts de el .local pegarlo en ~/.local/share/fonts
