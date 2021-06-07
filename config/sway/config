@@ -97,8 +97,8 @@ bindsym $mod+Alt+r reload
 
 # set-Tema
 exec_always {
-    #gsettings set $gnome-schema gtk-theme 'Windows-10'
-    #gsettings set $gnome-schema icon-theme 'Windows-10'
+    #gsettings set $gnome-schema gtk-theme 'Yaru-Pink-dark'
+    #gsettings set $gnome-schema icon-theme 'Yaru-Pink'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
     gsettings set $gnome-schema font-name 'Roboto 11'
