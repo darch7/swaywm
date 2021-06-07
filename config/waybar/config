@@ -3,7 +3,7 @@
     "position": "top",
     "width" : 10,
     "height": 30,   
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode",  "sway/window"],
     "modules-center": [],
     "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network" ],
 

@@ -7,47 +7,57 @@
     font-weight:     bold;
     box-shadow:    none;
     text-shadow:   none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0);
     transition-duration: 0s;
+    min-width:  5px;
+    min-height: 5px;
 }
 
 window {
-    color:      rgba(217, 216, 216, 1);
-    background: rgba(1, 1, 1, 0.40);
+    color:     #fff642;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 window#waybar.solo {
-    background: rgba(1, 1, 1, 0.40);
+    background: rgba(255, 255, 255, 0);
+    
 }
 
 #workspaces {
     border-radius: 12px;
-    background: rgba(40, 42, 54, 0.85);
+    background: rgba(8, 3, 12, 0.39);
     transition: none;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    
+    
 }
 
 #workspaces button {
     transition: none;
-    color:      rgba(217, 216, 216, 0.4);
+    color:      #e949c3;
     background: transparent;
-     border-radius: 0;
+    border-radius: 0;
 }
 
 #workspaces button.visible {
-    color:      rgba(217, 216, 216, 1);
+    color:      #9aedfe;
+     border-radius: 3.5;
 }
 
 #workspaces button.focused {
-    border-top: 3px solid #9aedfe;
+    border-top: 2px solid #9aedfe;
     color: #9aedfe;
 }
 
 #workspaces button:hover {
-    border-top: 3px solid #ff79c6;
+    border-top: 2px solid #9aedfe;
     transition: none;
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #ff79c6;
+    color: #9aedfe;
+    
 }
 
 #workspaces button.urgent {
@@ -55,19 +65,22 @@ window#waybar.solo {
 }
 
 #mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
-    margin:     0px 6px 0px 5px;
-    min-width:  25px;
+    margin:     0px 2px 0px 2px;
+    
 }
 
 #clock {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(107, 142, 35, 0.85);
+    color: #2B2B2B;
+    background: rgba(44, 181, 194, 1);  
+    border: 2px solid #19656c;
+    border-bottom: 2px solid #19656c;
+    border-top: 2px solid #19656c;
 }
 
 #custom-notif {
@@ -75,21 +88,25 @@ window#waybar.solo {
     margin-right: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
     background: rgb(238,130,238);
+    
 }
 
 #backlight {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(188, 143, 143, 0.85);
+    color: #2B2B2B;
+    background: rgba(157, 101, 189, 1); 
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #battery.warning {
@@ -109,7 +126,7 @@ window#waybar.solo {
     margin-right: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
 }
@@ -131,132 +148,156 @@ window#waybar.solo {
 }
 
 #custom-time {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(154, 205, 50, 0.85);
+    color: #2B2B2B;
+    background: rgba(177, 158, 252, 1);  
+    border: 2px solid #6151a4;
+    border-bottom: 2px solid #6151a4;
+    border-top: 2px solid #6151a4;
 }
 
 #custom-weather {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(218, 112, 214, 0.85);
+    color: #2B2B2B;
+    background: rgba(201, 231, 252, 1);
+    border: 2px solid #85c9f9;
+    border-bottom: 2px solid #85c9f9;
+    border-top: 2px solid #85c9f9;
 }
 
 #custom-unsync {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
     background: rgba(154, 237, 254, 0.85);
 }
 
 #custom-storage-home {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(154, 237, 254, 0.85);
+    color: #2B2B2B;
+    background: rgba(250, 187, 252, 1);
+    border: 2px solid #f472f8;
+    border-bottom: 2px solid #f472f8;
+    border-top: 2px solid #f472f8;
 }
 
 #custom-storage-root {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(154, 237, 254, 0.85);
+    color: #2B2B2B;
+    background: rgba(174, 234, 117, 1); 
+    border: 2px solid #72cc1e;
+    border-bottom: 2px solid #72cc1e;
+    border-top: 2px solid #72cc1e;
 }
 
 #custom-snapcount {
     margin-left: 2px;
     margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
     background: rgba(154, 237, 254, 0.85);
 }
 
 #pulseaudio {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(189, 183, 107, 0.85);
+    color: #2B2B2B;
+    background: rgba(81, 107, 224, 1);
+    border: 2px solid #122268;
+    border-bottom: 2px solid #122268;
+    border-top: 2px solid #122268;
 }
 
 #network {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(189, 183, 107, 0.85);
+    color: #2B2B2B;
+    background: rgba(205, 112, 112, 1);
+    border: 2px solid #802d2d;
+    border-bottom: 2px solid #802d2d;
+    border-top: 2px solid #802d2d;
 }
 
 #cpu {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(205, 92, 92, 0.85);
+    color: #2B2B2B;
+    background: rgba(206, 45, 13, 1);
+    border: 2px solid #7d1b08;
+    border-bottom: 2px solid #7d1b08;
+    border-top: 2px solid #7d1b08;
 }
 
 #battery {
     margin-left: 2px;
     margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
     background: rgba(176, 196, 222, 0.85);
 }
 
 #memory {
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
     transition: none;
-    color: #4d4d4d;
-    background: rgba(222, 184, 135, 0.85);
+    color: #2B2B2B;
+    background:	rgba(238, 231, 93, 1);
+    border: 2px solid #e9dd07;
+    border-bottom: 2px solid #e9dd07;
+    border-top: 2px solid #e9dd07;
 }
 
 #custom-spotify {
     margin-left: 2px;
     margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
     transition: none;
     color: #4d4d4d;
     background: rgba(119, 136, 153, 0.85);

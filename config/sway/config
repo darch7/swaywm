@@ -18,6 +18,7 @@ seat * hide_cursor 3000
 
 # Fonts
 font pango: Iconsolata 12
+font pango: 
 
 # Run pure wayland
 #xwayland disable
@@ -92,7 +93,7 @@ default_border pixel 3
 hide_edge_borders both
 
 # reload the configuration file
-bindsym $mod+Alt+r reload
+bindsym $mod+Alt+r reload 
 
 # set-Tema
 exec_always {
@@ -116,8 +117,11 @@ exec "hash dbus-update-activation-environment 2>/dev/null; \
      
 #exec_always gsettings set $gnome-schema gtk-theme 'Arc-Dark'
 
+
+###### THEMES SWAY BORDER WINDOW ETC
 # Defining colors
 set {
+	$pink		#ff79c6
 	$white		#ffffff
 	$cyan		#00afd7
 	$acqua		#00d787 
@@ -147,7 +151,7 @@ client.placeholder	$elegant	$magenta	$silver		$white		$magenta
 
 # Workspace Variables
 
-set $ws1 "1:"
+set $ws1 "1:一"
 set $ws2 "2:二"
 set $ws3 "3:三"
 set $ws4 "4:四"
@@ -238,6 +242,7 @@ bindsym XF86AudioPrev  exec "dbus-send --print-reply --dest=org.mpris.MediaPlaye
 
 # screenshot
 bindsym Print exec grim -t jpeg -q 100 $(date +'D-shot_%Y-%m-%d-%H%M%S.jpeg')
+#bindsym Print exec maim -m 1 D-shot-captura-pantalla-"$(date '+%y%m%d-%H%M-%S').png"
 bindsym Shift+Print exec --no-startup-id slurp | grim -t jpeg -q 100 -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.jpeg')
 bindsym Alt+Shift+Print exec maim -m 1 -i D-shot-ventana-activa-"$(date '+%y%m%d-%H%M-%S').png"
 

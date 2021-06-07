@@ -36,7 +36,7 @@ temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]]+)\.\./\1 to /g')
 # https://fontawesome.com/icons?s=solid&c=weather
 case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
 "clear" | "sunny")
-    condition="滛 "
+    condition="盛 "
     ;;
 "partly cloudy")
     condition=" "

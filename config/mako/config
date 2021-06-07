@@ -2,8 +2,8 @@ font=Dejavu 09
 
 layer=overlay
 anchor=top-right
-background-color=#3a3a3a
-text-color=#dcbb8c
+background-color=#08030c
+text-color=#e949c3
 width=360
 height=150
 padding=15
@@ -14,7 +14,7 @@ max-icon-size=100
 
 border-size=2
 border-radius=12
-border-color=#FF51DC
+border-color=#9aedfe
 
 default-timeout=5000
 
