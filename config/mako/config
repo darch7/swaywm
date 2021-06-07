@@ -14,7 +14,11 @@ max-icon-size=100
 
 border-size=2
 border-radius=12
+<<<<<<< HEAD
 border-color=#9aedfe
+=======
+border-color=#464646
+>>>>>>> dbac49a4804225729872a8c7ba7ef70608252208
 
 default-timeout=5000
 
