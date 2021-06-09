@@ -9,12 +9,12 @@
     text-shadow:   none;
     background: rgba(255, 255, 255, 0);
     transition-duration: 0s;
-    min-width:  5px;
-    min-height: 5px;
+    min-width:  2px;
+    min-height: 2px;
 }
 
 window {
-    color:     #fff642;
+    color:     #FFFE3B;
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -69,20 +69,6 @@ window#waybar.solo {
     
 }
 
-#clock {
-    margin-left: 1px;
-    margin-right: 1px;
-    padding-left: 1px;
-    padding-right: 1px;
-    border-radius: 12px;
-    transition: none;
-    color: #2B2B2B;
-    background: rgba(44, 181, 194, 1);  
-    border: 2px solid #19656c;
-    border-bottom: 2px solid #19656c;
-    border-top: 2px solid #19656c;
-}
-
 #custom-notif {
     margin-left: 2px;
     margin-right: 2px;
@@ -102,8 +88,8 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(157, 101, 189, 1); 
+    color:	#8ecde6 ;
+    background: #0e0522; 
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -147,6 +133,20 @@ window#waybar.solo {
     background: rgba(154, 205, 50, 0.85);
 }
 
+#clock {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color: #dd6699;
+    background: #0e0522;  
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
+}
+
 #custom-time {
     margin-left: 1px;
     margin-right: 1px;
@@ -154,11 +154,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(177, 158, 252, 1);  
-    border: 2px solid #6151a4;
-    border-bottom: 2px solid #6151a4;
-    border-top: 2px solid #6151a4;
+    color: #d059ff;
+    background: #0e0522;  
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #custom-weather {
@@ -168,11 +168,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(201, 231, 252, 1);
-    border: 2px solid #85c9f9;
-    border-bottom: 2px solid #85c9f9;
-    border-top: 2px solid #85c9f9;
+    color: #e949c3;
+    background: #0e0522;
+    border: 1px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #custom-unsync {
@@ -193,11 +193,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(250, 187, 252, 1);
-    border: 2px solid #f472f8;
-    border-bottom: 2px solid #f472f8;
-    border-top: 2px solid #f472f8;
+    color: #00b8ff;
+    background: #0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #custom-storage-root {
@@ -207,11 +207,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(174, 234, 117, 1); 
-    border: 2px solid #72cc1e;
-    border-bottom: 2px solid #72cc1e;
-    border-top: 2px solid #72cc1e;
+    color:   #8ddb34;
+    background: #0e0522; 
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #custom-snapcount {
@@ -232,11 +232,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(81, 107, 224, 1);
-    border: 2px solid #122268;
-    border-bottom: 2px solid #122268;
-    border-top: 2px solid #122268;
+    color: #ff2a6d;;
+    background: #0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #network {
@@ -246,11 +246,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(205, 112, 112, 1);
-    border: 2px solid #802d2d;
-    border-bottom: 2px solid #802d2d;
-    border-top: 2px solid #802d2d;
+    color: #00ff9f;
+    background: #0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #cpu {
@@ -260,11 +260,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background: rgba(206, 45, 13, 1);
-    border: 2px solid #7d1b08;
-    border-bottom: 2px solid #7d1b08;
-    border-top: 2px solid #7d1b08;
+    color: #ff6e27;
+    background: #0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #battery {
@@ -285,11 +285,11 @@ window#waybar.solo {
     padding-right: 1px;
     border-radius: 12px;
     transition: none;
-    color: #2B2B2B;
-    background:	rgba(238, 231, 93, 1);
-    border: 2px solid #e9dd07;
-    border-bottom: 2px solid #e9dd07;
-    border-top: 2px solid #e9dd07;
+    color: #ffff52;
+    background:	#0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }
 
 #custom-spotify {

@@ -1,2 +1,0 @@
-#! /bin/sh
-sudo reflector --latest 10 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist

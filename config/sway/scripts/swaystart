@@ -1,57 +1,7 @@
 #!/usr/bin/env sh
 
-# Native display
-exec systemctl --user import-environment DISPLAY; exec systemctl --user import-environment WAYLAND_DISPLAY
-
 # Settings
-export TERMINAL='gnome-terminal'
 export EDITOR='nvim'
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_DATA_DIRS="$HOME/.local/share/:/usr/local/share/:/usr/share/"
-#export XKB_DEFAULT_LAYOUT='br'
-
-# Native display
-#export BEMENU_BACKEND='wayland'
-export MOZ_ENABLE_WAYLAND=1
-export SAL_USE_VCLPLUGIN='gtk3'
-export GDK_BACKEND='wayland'
-export XDG_SESSION_TYPE='wayland'
-export QT_QPA_PLATFORM='wayland-egl'
-#export QT_WAYLAND_FORCE_DPI='physical'
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export CLUTTER_BACKEND='wayland'
-export SDL_VIDEODRIVER='wayland'
-export ECORE_EVAS_ENGINE='wayland_egl'
-export ELM_ENGINE='wayland_egl'
-export GTK_USE_PORTAL=1
-
-# Bug Fixing
-export _JAVA_AWT_WM_NONREPARENTING=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-
-# NO NVIDIA
-#sudo rmmod nvidia_uvm nvidia_drm nvidia_modeset nvidia
-#export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
-
-# Pipewire
-#export LD_PRELOAD="/usr/lib/libjack-pw.so" "/usr/lib/libpulse-"{pw,mainloop-glib-pw,simple-pw}".so"
-export AE_SINK=ALSA
-export SDL_AUDIODRIVER=alsa
-export PIPEWIRE_LATENCY='128/96000'
-
-# Telegram
-export TDESKTOP_DISABLE_GTK_INTEGRATION=1
-
-# Qt appearance
-#requires plasma-integration (could be qt5ct instead)
-#export QT_QPA_PLATFORMTHEME='kde'
-#export QT_PLATFORMTHEME='kde'
-#export QT_PLATFORM_PLUGIN='kde'
-
-# DE
-export XDG_CURRENT_DESKTOP='sway'
-export `gnome-keyring-daemon --start --components=ssh`
-
+export PATH="${PATH}:$HOME/.config/sway/scripts"
 export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
 export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
