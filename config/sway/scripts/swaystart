@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Settings
-export EDITOR='nvim'
-export PATH="${PATH}:$HOME/.config/sway/scripts"
-export SUDO_ASKPASS="$HOME/.config/sway/scripts/bin/pass"
-export PATH="${PATH}:$HOME/.config/sway/scripts/bin"
