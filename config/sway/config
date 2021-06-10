@@ -38,8 +38,6 @@ set $editor nvim
 
 ###--------------------------------------> AUTOARRANQUES___
 
-exec bash $HOME/.config/sway/scripts/swaystart
-include $HOME/.config/sway/scripts/bin/*
 exec export `gnome-keyring-daemon --start --components=ssh`
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 exec export QT_AUTO_SCREEN_SCALE_FACTOR=0
@@ -101,13 +99,8 @@ bindsym $mod+Alt+r reload
 
 # set-Tema
 exec_always {
-<<<<<<< HEAD
     gsettings set $gnome-schema gtk-theme 'Yaru-Pink-dark'
     gsettings set $gnome-schema icon-theme 'Yaru-Pink'
-=======
-    #gsettings set $gnome-schema gtk-theme 'Yaru-Pink-dark'
-    #gsettings set $gnome-schema icon-theme 'Yaru-Pink'
->>>>>>> 76702b03f7f87cabae5c2e317c735f105bea5bd1
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
     gsettings set $gnome-schema font-name 'Roboto 11'
