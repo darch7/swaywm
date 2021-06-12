@@ -208,7 +208,8 @@ alias cl="rpm-ostree cleanup -b -m"
 alias acgit="git init
 git add --all
 git commit -m "actualizacion"
-git push -u origin master"
+git push -u origin master
+git push"
 
 
 
