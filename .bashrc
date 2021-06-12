@@ -205,7 +205,7 @@ alias ac="rpm-ostree update && flatpak update -y"
 
 alias cl="rpm-ostree cleanup -b -m"
 
-alias acgit="(git init
+alias acgit="git init
 git add --all
 git commit -m "actualizacion"
 git push -u origin master"
