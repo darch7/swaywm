@@ -1,3 +1,3 @@
 # swaywmbydarch
 
-![D-shot_2021-06-09-201404](https://user-images.githubusercontent.com/70046164/121441219-bfb02400-c95f-11eb-907e-75b1b72e5503.png)
+![image](https://user-images.githubusercontent.com/70046164/121462873-a58a3c00-c987-11eb-9701-34a3035f5605.png)
