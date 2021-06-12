@@ -24,7 +24,8 @@
     "clock": {
         //"format": " {:%d.%m.%y %a / W: %V}",
         "format": " {:%d.%m.%y %a}",
-        "tooltip": false
+        "tooltip": false,        
+        "on-click": "flatpak run org.gnome.Calendar"
     },
     "battery": {
         "format": "{icon} {capacity}%",
@@ -49,10 +50,10 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "墳", ""]
+            "default": ["", "墳", ""],
         },
         "scroll-step": 5,
-        "on-click": "pavucontrol",
+        "on-click": "gnome-terminal -x alsamixer",
         "tooltip": false
     },
     "custom/storage-root": {
@@ -61,7 +62,8 @@
         "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
-        "exec": "~/.config/waybar/modules/storage-root.sh"
+        "exec": "~/.config/waybar/modules/storage-root.sh",
+        "on-click": "gnome-terminal -x ranger"
     },
     "custom/storage-home": {
         "format": " {}",
@@ -70,7 +72,7 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage-home.sh",
-        "on-click": "ranger"
+        "on-click": "gnome-terminal -x ranger"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -92,12 +94,14 @@
     },
     "cpu": {
         "tooltip": false,
+        "on-click": "gnome-system-monitor",
         "format": " {}%"
     },
     "memory": {
         "tooltip": false,
+        "on-click": "gnome-system-monitor",
         "format": "力 {}%"
-        // "format": "{used} / {total}  "
+        // "format": "{used} / {total}  "       
     },
     "network": {
         "format-wifi": "  {essid} ({signalStrength}%)",
