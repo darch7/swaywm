@@ -226,21 +226,33 @@ bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' '
 
 # Pipewire Audio controls
 
+# Custom Keys Default
 bindsym XF86AudioRaiseVolume exec "amixer set Master 1%+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer set Master 1%- unmute"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
+# Custom Keys 
+bindsym $mod+equal exec "amixer set Master 1%+ unmute"
+bindsym $mod+minus exec "amixer set Master 1%- unmute"
+bindsym Ctrl+minus exec "amixer set Master toggle"
+
 # Sreen brightness controls -- # https://github.com/haikarainen/light
 bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
 bindsym XF86MonBrightnessDown exec "light -U 5"	# decrease screen brightness
-bindsym shift+up exec light -A 5    # increase screen brightness
-bindsym shift+down exec light -U 5  # decrease screen brightness
+bindsym $mod+shift+equal exec light -A 5    # increase screen brightness
+bindsym $mod+shift+minus exec light -U 5  # decrease screen brightness
 
 # multimedia keys/spotify conf
+# Keys default
 bindsym XF86AudioPlay  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioNext  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 bindsym XF86AudioPrev  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+# Custom Keys
+bindsym  $mod+period  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 # screenshot
 bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png')
@@ -377,8 +389,6 @@ input 1267:35:Elan_Touchpad {
 
 ###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT___________________________________________
 input * {
-	xkb_layout "latam"
-	xkb_options "grp:win_space_toggle"
+	xkb_Layout us,latam
+    xkb_options grp:win_space_toggle
 }
-
-

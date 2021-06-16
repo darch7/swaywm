@@ -64,7 +64,7 @@ window#waybar.solo {
     color:      rgba(238, 46, 36, 1);
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-teclado {
     margin:     0px 2px 0px 2px;
     
 }
@@ -309,4 +309,18 @@ window#waybar.solo {
 
 #custom-storage.critical {
     color:      rgba(238, 46, 36, 1);
+}
+
+#custom-teclado {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color: #fca6ac;
+    background: #0e0522;
+    border: 2px solid #5a3172;
+    border-bottom: 2px solid #5a3172;
+    border-top: 2px solid #5a3172;
 }

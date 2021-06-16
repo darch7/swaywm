@@ -5,7 +5,7 @@
     "height": 30,   
     "modules-left": ["sway/workspaces", "sway/mode",  "sway/window"],
     "modules-center": [],
-    "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network" ],
+    "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network", "custom/teclado" ],
 
     "sway/mode": {
         "format": " {}"
@@ -118,5 +118,15 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
-   }
+    },
+
+      "custom/teclado": {
+		"format": "{}  ",
+		"interval": 1,
+		"signal": 1,
+		// bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
+		"exec": "$HOME/.config/waybar/modules/teclado",
+		//swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
+		"tooltip": "false"
+    },
 }
