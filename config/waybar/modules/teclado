@@ -2,5 +2,9 @@
 
 ## Get current keyboard layout in swaywm for waybar
 
+<<<<<<< HEAD
 swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" |  grep -m1 "xkb_active_layout_name" | sed  -e "s/.*(//" -e "s/).*//" -e "s/Latin American/LAT/" -e "s/.*US, intl.*/US,int/"
+=======
+ swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | sed  -e "s/.*(//" -e "s/).*//" -e "s/Latin American/LA/"
+>>>>>>> 24deaa98b27590ef1f94e8f3b9cdd373ea9736cb
 
