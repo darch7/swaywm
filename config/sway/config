@@ -1,9 +1,9 @@
-#                                            .___                    .__     
-#  ________  _  _______  ___.__.           __| _/____ _______   ____ |  |__  
-# /  ___/\ \/ \/ /\__  \<   |  |  ______  / __ |\__  \\_  __ \_/ ___\|  |  \ 
+#                                            .___                    .__
+#  ________  _  _______  ___.__.           __| _/____ _______   ____ |  |__
+# /  ___/\ \/ \/ /\__  \<   |  |  ______  / __ |\__  \\_  __ \_/ ___\|  |  \
 # \___ \  \     /  / __ \\___  | /_____/ / /_/ | / __ \|  | \/\  \___|   Y  \
 #/____  >  \/\_/  (____  / ____|         \____ |(____  /__|    \___  >___|  /
-#     \/               \/\/                   \/     \/            \/     \/ 
+#     \/               \/\/                   \/     \/            \/     \/
 
 # //computingforgeeks.com/
 # Please see https://github.com/swaywm/sway/wiki for a complete reference!
@@ -18,7 +18,7 @@ seat * hide_cursor 3000
 
 # Fonts
 font pango: Iconsolata 12
-font pango: 
+font pango:
 
 # Set Wallpeaper
 output * bg /var/home/darch/Pictures/skull.jpg fill
@@ -48,7 +48,7 @@ exec export DISPLAY=:0
 exec lxpolkit
 exec pipewire
 exec mako
- 
+
 ####-----------------------------------------------> APPS ATAJOS _____________________________________________
 
 # Mako
@@ -59,22 +59,22 @@ bindsym $mod+Shift+y exec makoctl dismiss -a
 bindsym $mod+Return exec $terminal
 
 # start rofi (a program launcher)
-bindsym $mod+d exec $lanzador 
+bindsym $mod+d exec $lanzador
 
 # Ranger
-bindsym $mod+e exec gnome-terminal -x ranger
+bindsym $mod+e exec $terminal -x ranger
 
 # Nautilus
 bindsym $mod+r exec nautilus
 
 # Neovim
-bindsym $mod+shift+n exec gnome-terminal -x $editor
+bindsym $mod+shift+n exec $terminal -x $editor
 
 # Browser
 bindsym $mod+w exec flatpak run org.mozilla.firefox
 
 # Alsamixer
-bindsym $mod+c exec gnome-terminal -x alsamixer
+bindsym $mod+c exec $terminal -x alsamixer
 
 # Spotify
 bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
@@ -95,7 +95,7 @@ default_border pixel 3
 hide_edge_borders both
 
 # reload the configuration file
-bindsym $mod+Alt+r reload 
+bindsym $mod+Alt+r reload
 
 # set-Tema
 exec_always {
@@ -116,7 +116,7 @@ exec "hash dbus-update-activation-environment 2>/dev/null; \
      dbus-update-activation-environment --all; \
      dbus-update-activation-environment --systemd; \
      systemctl --user start sway-session.target"
-     
+
 #exec_always gsettings set $gnome-schema gtk-theme 'Arc-Dark'
 
 
@@ -126,7 +126,7 @@ set {
 	$pink		#ff79c6
 	$white		#ffffff
 	$cyan		#00afd7
-	$acqua		#00d787 
+	$acqua		#00d787
 	$wine		#72003e
 	$magenta	#af005f
 	$orange		#ff8700
@@ -136,12 +136,12 @@ set {
 	#$transparent	#0000007f
 }
 
-# Set some nice 	colors		border		background	text		indicator	child_border
-client.focused		$elegant	$cyan		$elegant	$white		$cyan
-client.unfocused	$elegant	$elegant	$orange		$white		$elegant
-client.focused_inactive	$elegant	$elegant	$acqua		$magenta	$acqua
-client.urgent		$elegant	$magenta	$silver		$magenta	$magenta
-client.placeholder	$elegant	$magenta	$silver		$white		$magenta
+# Set some nice 	         colors		 border	   	background	  text		    indicator	   child_border
+client.focused        	 	$elegant	 $cyan		  $elegant	    $white	   	$cyan
+client.unfocused        	$elegant	 $elegant	  $orange	     	$white	  	$elegant
+client.focused_inactive 	$elegant   $elegant  	$acqua	     	$magenta   	$acqua
+client.urgent	          	$elegant	 $magenta  	$silver	     	$magenta   	$magenta
+client.placeholder	      $elegant   $magenta	  $silver	     	$white	  	$magenta
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -198,28 +198,27 @@ bar {
 }
 
 # Transparencias
-for_window [class="Spotify"] opacity 0.95 
+for_window [class="Spotify"] opacity 0.95
 
 ###-----------------------------------------------------------------------> MENU APAGADO_________________________________
 
-# Shutdown, Reboot, Lock Screen, and Logout 
+# Shutdown, Reboot, Lock Screen, and Logout
 
 set $power_mode "power"
 bindsym $mod+Shift+q      mode $power_mode
 mode $power_mode {
     bindsym p         exec systemctl poweroff
-    bindsym r         exec systemctl reboot 
+    bindsym r         exec systemctl reboot
     bindsym l         exec swaylock -i ~/Pictures/22.jpg , mode "default"
     bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym h         exec systemctl hibernate 
-    #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep 
+    bindsym h         exec systemctl hibernate
+    #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
     bindsym s         exec pm-suspend
-	
-	
+
 # Hibernate
-bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
-    bindsym Return    mode "default"
-    bindsym Escape    mode "default"
+  bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
 }
 
 ###---------------------------------------------------------------------------------> MULTIMEDIA_______________________________________________
@@ -232,7 +231,7 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 1%- unmute"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
-# Custom Keys 
+# Custom Keys
 bindsym $mod+equal exec "amixer set Master 1%+ unmute"
 bindsym $mod+minus exec "amixer set Master 1%- unmute"
 bindsym Ctrl+minus exec "amixer set Master toggle"
@@ -261,46 +260,20 @@ bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +
 ###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS_____________________________________
 
 # Preseleccionar forma de ventana Horizontal
-bindsym $mod+k split h 
+bindsym $mod+p split h
 # Preseleccionar forma de ventana Vertical
-bindsym $mod+l split v
+bindsym $mod+shift+p split v
 
 # Cerrar Ventana
 bindsym $mod+q kill
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+h focus down
-
-# bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # Switch the current container between different layout styles
-bindsym	$mod+i	layout stacking
-bindsym	$mod+o	layout tabbed
-bindsym	$mod+p	layout toggle split
+bindsym	$mod+u	layout stacking
+bindsym	$mod+i	layout tabbed
+bindsym	$mod+o	layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+s floating toggle
@@ -309,19 +282,48 @@ bindsym $mod+s floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
-# Resize
-bindsym Ctrl+shift+Left resize shrink width 5 px or 5 ppt
-bindsym Ctrl+shift+Down resize grow height 5 px or 5 ppt
-bindsym Ctrl+shift+Up resize shrink height 5 px or 5 ppt
-bindsym Ctrl+shift+Right resize grow width 5 px or 5 ppt
+# CAMBIAR ENTRE VENTANAS TAB
+bindsym alt+Tab			focus next
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#----------------------------------------------------------
+
+# alternatively, you can use the cursor keys:
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
+
+#--------------------------------------------------------------
+
+# Move
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
+
+# Move
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+
+#----------------------------------------------------------------
+# Resize
+bindsym Ctrl+shift+h resize shrink width 5 px or 5 ppt
+bindsym Ctrl+shift+j resize grow height 5 px or 5 ppt
+bindsym Ctrl+shift+k resize shrink height 5 px or 5 ppt
+bindsym Ctrl+shift+l resize grow width 5 px or 5 ppt
 
 # Floating windows
 
@@ -346,16 +348,14 @@ for_window [window_type="menu"] floating enable
 # Sticky window
 for_window [instance="file_progress"]  sticky enable
 for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
- 
+
 # Focus window settings
 no_focus [window_role="pop-up"]
-focus_on_window_activation focus 
-#for_window [class="(?i)"] focus 
-
-# CAMBIAR ENTRE VENTANAS TAB 
-bindsym alt+Tab			focus next
+focus_on_window_activation focus
+#for_window [class="(?i)"] focus
 
 ###-------------------------------------------------------------------------------------------------------------->_MONITORES_Y RESOLUCIÓN___________________________________________
+
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output eDP-1 mode 1366x768@60Hz {
@@ -365,7 +365,7 @@ output eDP-1 mode 1366x768@60Hz {
            }
 
 ## Touchpad
- 
+
 input 1267:35:Elan_Touchpad {
     tap enabled
     natural_scroll enabled
@@ -390,5 +390,6 @@ input 1267:35:Elan_Touchpad {
 ###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT___________________________________________
 input * {
 	xkb_Layout us,latam
+    xkb_variant "intl,"
     xkb_options grp:win_space_toggle
 }
