@@ -8,11 +8,18 @@
 # //computingforgeeks.com/
 # Please see https://github.com/swaywm/sway/wiki for a complete reference!
 #
-###------------------> MODS DE SETEO ___________________________________________
+###------------------> MODS DE SETEO
+# Mods run xmodmap in terminal for all mods___________________________________________
 set $mod Mod4
 set $mod1 Mod1
 set $mod5 Mod5
 floating_modifier $mod
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
 
 # Ocultar el mouse
 seat * hide_cursor 3000
@@ -33,12 +40,24 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 ###---------------------------> SETEO DE APPS FAVORITOS__________________________________
 
 # Set your terminal
+#set terminal
 set $terminal gnome-terminal
-set $lanzador rofi -modi drun -show drun -width 22
+
+# set lanzador de apps
+set $lanzador wofi -a -I -modi drun --show drun -x 12 -y 20  
+
+# set ide
 set $editor nvim
 
 ###--------------------------------------> AUTOARRANQUES___
 
+exec export MOZ_ENABLE_WAYLAND=1
+exec export QT_QPA_PLATFORM=wayland-egl
+exec export CLUTTER_BACKEND=wayland
+exec export ECORE_EVAS_ENGINE=wayland-egl
+exec export ELM_ENGINE=wayland_egl
+exec export SDL_VIDEODRIVER=wayland
+exec export NO_AT_BRIDGE=1
 exec export `gnome-keyring-daemon --start --components=ssh`
 exec export _JAVA_AWT_WM_NONREPARENTING=1
 exec export QT_AUTO_SCREEN_SCALE_FACTOR=0
@@ -137,12 +156,12 @@ set {
 	#$transparent	#0000007f
 }
 
-# Set some nice 	         colors		 border	   	background	  text		    indicator	   child_border
-client.focused        	 	$elegant	 $cyan		  $elegant	    $white	   	$cyan
-client.unfocused        	$elegant	 $elegant	  $orange	     	$white	  	$elegant
-client.focused_inactive 	$elegant   $elegant  	$acqua	     	$magenta   	$acqua
-client.urgent	          	$elegant	 $magenta  	$silver	     	$magenta   	$magenta
-client.placeholder	      $elegant   $magenta	  $silver	     	$white	  	$magenta
+# Set some nice 	         colors		 border	   	background	    text		indicator	   child_border
+client.focused        	 	$elegant	$cyan		$elegant	    $white	   	$cyan
+client.unfocused        	$elegant	$elegant	$orange	     	$white	  	$elegant
+client.focused_inactive 	$elegant   	$elegant  	$acqua	     	$magenta   	$acqua
+client.urgent	          	$elegant	$magenta  	$silver	     	$magenta   	$magenta
+client.placeholder	      	$elegant    $magenta	 $silver	    $white	  	$magenta
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -235,7 +254,7 @@ bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 # Custom Keys
 bindsym $mod+equal exec "amixer set Master 1%+ unmute"
 bindsym $mod+minus exec "amixer set Master 1%- unmute"
-bindsym Ctrl+minus exec "amixer set Master toggle"
+bindsym $mod+Ctrl+minus exec "amixer set Master toggle"
 
 # Sreen brightness controls -- # https://github.com/haikarainen/light
 bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
@@ -268,6 +287,9 @@ bindsym $mod+shift+p split v
 # Cerrar Ventana
 bindsym $mod+q kill
 
+# Cambiar el foco entre ventanas flotantes y tailing
+bindsym $mod+Tab focus mode_toggle
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -293,38 +315,49 @@ bindsym alt+Tab			focus next
 
 #----------------------------------------------------------
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
+# Moving around:
+# Default y seteado
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
-#--------------------------------------------------------------
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-# Move
-bindsym $mod5+down focus down
-bindsym $mod5+up focus up
-bindsym $mod5+right focus right
-bindsym $mod5+left focus left
+#-------------------------------------------------------------
 
-# Move
-bindsym $mod5+Shift+down move down
-bindsym $mod5+Shift+up move up
-bindsym $mod5+Shift+right move right
-bindsym $mod5+Shift+left move left
+# Alternativo con flechas
+ 
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+    
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 #----------------------------------------------------------------
-# Resize
-bindsym Ctrl+shift+h resize shrink width 5 px or 5 ppt
-bindsym Ctrl+shift+j resize grow height 5 px or 5 ppt
-bindsym Ctrl+shift+k resize shrink height 5 px or 5 ppt
-bindsym Ctrl+shift+l resize grow width 5 px or 5 ppt
+# Resize/ custom
+bindsym Ctrl+shift+$left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+shift+$down resize grow height 5 px or 5 ppt
+bindsym Ctrl+shift+$up resize shrink height 5 px or 5 ppt
+bindsym Ctrl+shift+$right resize grow width 5 px or 5 ppt
+
+# Default
+bindsym Ctrl+Shift+Left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+Shift+Down resize grow height 5 px or 5 ppt
+bindsym Ctrl+Shift+Up resize shrink height 5 px or 5 ppt
+bindsym Ctrl+Shift+Right resize grow width 5 px or 5 ppt
 
 # Floating windows
 

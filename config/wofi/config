@@ -1,0 +1,8 @@
+width=300
+height=200
+insensitive=true
+mode=drun,run
+columns=1
+padding:5
+lines=6
+

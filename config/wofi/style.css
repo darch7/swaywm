@@ -1,0 +1,33 @@
+window {
+    border: 5px solid #5a3172;
+    border-radius: 12px;
+    background-color: rgba(15, 6, 35, 0.89); 
+}
+
+#input {
+    color: #FFFE3B;
+    border: 2px solid #9aedfe;
+    border-radius: 12px;
+    background-color: rgba(15, 6, 35, 0.89);
+    font-size: 18px;
+}
+
+
+#outer-box {
+    margin: 10px;
+}
+
+#scroll {
+    margin: 5px 0px;
+    font-size: 16px;
+    color: #FFFE3B;
+}
+
+#scroll label {
+    margin: 5px 7px;
+}
+
+#entry:selected {
+    color: #e949c3;
+    background-color: #e949c3;
+}
