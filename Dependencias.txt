@@ -2,7 +2,7 @@
 aproveché sus apps y confs de temas por eso los paquetes que ocupos son muy
 pocos. 
 
-rpm-ostree install sway waybar swaylock neovim ranger mako light rofi
+rpm-ostree install sway waybar swaylock neovim ranger mako light wofi
 
 
 las fonts de el .local pegarlo en ~/.local/share/fonts
