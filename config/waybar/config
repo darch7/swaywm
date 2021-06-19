@@ -2,7 +2,7 @@
     "layer": "bottom",
     "position": "top",
     "width" : 10,
-    "height": 30,   
+    "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode",  "sway/window"],
     "modules-center": [],
     "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network", "custom/teclado" ],
@@ -20,11 +20,11 @@
         "max-length": 20,
         "tooltip": false
     },
-    
+
     "clock": {
         //"format": " {:%d.%m.%y %a / W: %V}",
         "format": " {:%d.%m.%y %a}",
-        "tooltip": false,        
+        "tooltip": false,
         "on-click": "flatpak run org.gnome.Calendar"
     },
     "battery": {
@@ -101,7 +101,7 @@
         "tooltip": false,
         "on-click": "gnome-system-monitor",
         "format": "力 {}%"
-        // "format": "{used} / {total}  "       
+        // "format": "{used} / {total}  "
     },
     "network": {
         "format-wifi": "  {essid} ({signalStrength}%)",
@@ -109,7 +109,7 @@
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },	 	 
+    },
 	  "custom/weather": {
         "format": "{}",
         "format-alt": "{alt}: {}",
@@ -120,13 +120,13 @@
         "exec-if": "ping wttr.in -c1"
     },
 
-      "custom/teclado": {
-		"format": "{}  ",
-		"interval": 1,
-		"signal": 1,
-		// bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
-		"exec": "$HOME/.config/waybar/modules/teclado",
-		//swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
-		"tooltip": "false"
+    "custom/teclado": {
+		    "format": "{}  ",
+		    "interval": 1,
+		    "signal": 1,
+		    // bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
+		    "exec": "$HOME/.config/waybar/modules/teclado",
+		    //swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
+		    "tooltip": "false"
     },
 }

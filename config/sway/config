@@ -11,6 +11,7 @@
 ###------------------> MODS DE SETEO ___________________________________________
 set $mod Mod4
 set $mod1 Mod1
+set $mod5 Mod5
 floating_modifier $mod
 
 # Ocultar el mouse
@@ -209,7 +210,7 @@ bindsym $mod+Shift+q      mode $power_mode
 mode $power_mode {
     bindsym p         exec systemctl poweroff
     bindsym r         exec systemctl reboot
-    bindsym l         exec swaylock -i ~/Pictures/22.jpg , mode "default"
+    bindsym l         exec swaylock -i ~/Pictures/24.jpg , mode "default"
     bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym h         exec systemctl hibernate
     #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
@@ -273,7 +274,7 @@ bindsym $mod+f fullscreen toggle
 # Switch the current container between different layout styles
 bindsym	$mod+u	layout stacking
 bindsym	$mod+i	layout tabbed
-bindsym	$mod+o	layout toggle split
+bindsym	$mod+o	layout toggle
 
 # toggle tiling / floating
 bindsym $mod+s floating toggle
@@ -307,16 +308,16 @@ bindsym alt+Tab			focus next
 #--------------------------------------------------------------
 
 # Move
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+h focus left
+bindsym $mod5+down focus down
+bindsym $mod5+up focus up
+bindsym $mod5+right focus right
+bindsym $mod5+left focus left
 
 # Move
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+h move left
+bindsym $mod5+Shift+down move down
+bindsym $mod5+Shift+up move up
+bindsym $mod5+Shift+right move right
+bindsym $mod5+Shift+left move left
 
 #----------------------------------------------------------------
 # Resize
