@@ -115,7 +115,7 @@ default_border pixel 3
 hide_edge_borders both
 
 # reload the configuration file
-bindsym $mod+Alt+r reload ; exec notify-send -i $HOME/.config/mako/logo/anime.png "SWAY RECARGADO"
+bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE DARCH-SAN !!!" 
 
 # set-Tema
 exec_always {
@@ -428,4 +428,4 @@ input * {
     xkb_options grp:win_space_toggle
 }
 
-exec notify-send -i $HOME/.config/mako/logo/inicio.png "WELCOME TO HOME DARCH"
+exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME DARCH-SAN !" "おかえりなさい! , OKAERINASAI DARCH-SAN !!!"
