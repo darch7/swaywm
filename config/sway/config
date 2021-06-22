@@ -12,8 +12,9 @@
 # Mods run xmodmap in terminal for all mods___________________________________________
 set $mod Mod4
 set $mod1 Mod1
-set $mod5 Mod5
 floating_modifier $mod
+#set $mod5 Mod5
+
 
 # Home row direction keys, like vim
 set $left h
@@ -41,7 +42,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 
 # Set your terminal
 #set terminal
-set $terminal gnome-terminal
+set $terminal alacritty
 
 # set lanzador de apps
 set $lanzador wofi -a -I -modi drun --show drun -x 12 -y 20  
@@ -82,19 +83,19 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+d exec $lanzador
 
 # Ranger
-bindsym $mod+e exec $terminal -x ranger
+bindsym $mod+e exec $terminal -e ranger
 
 # Nautilus
 bindsym $mod+r exec nautilus
 
 # Neovim
-bindsym $mod+shift+n exec $terminal -x $editor
+bindsym $mod+shift+n exec $terminal -e $editor
 
 # Browser
 bindsym $mod+w exec flatpak run org.mozilla.firefox
 
 # Alsamixer
-bindsym $mod+c exec $terminal -x alsamixer
+bindsym $mod+c exec $terminal -e alsamixer
 
 # Spotify
 bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
@@ -126,8 +127,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Roboto 11'
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
-    gsettings set org.gnome.desktop.default-applications.terminal exec gnome-terminal
-    gsettings set org.gnome.desktop.default-applications.terminal exec-arg -e
+    gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
 	set $gnome-schema org.gnome.desktop.interface
 }

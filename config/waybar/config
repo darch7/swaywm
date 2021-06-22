@@ -5,7 +5,7 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode",  "sway/window"],
     "modules-center": [],
-    "modules-right": [ "custom/weather", "custom/storage-root", "custom/storage-home", "memory", "cpu", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network", "custom/teclado" ],
+    "modules-right": [ "custom/weather", "memory", "cpu", "temperature", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network", "custom/teclado" ],
 
     "sway/mode": {
         "format": " {}"
@@ -39,8 +39,8 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{volume} {icon} ",
-        "format-alt": "{volume} {icon} ",
+        "format": "{icon} {volume}%",
+        "format-alt": "{icon} {volume}%",
         "format-alt-click": "click-right",
         "format-muted": "婢",
         "format-icons": {
@@ -119,6 +119,14 @@
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
     },
+      "temperature": {
+		//"thermal-zone": 1,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		"format-critical": "{temperatureC}°C ",
+		"format": "{temperatureC}°C ",
+		"interval": 2
+	},
 
     "custom/teclado": {
 		    "format": "{}  ",
