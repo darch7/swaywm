@@ -1,3 +1,3 @@
 #!/bin/bash
-timez=$(date +%H:%M:%S)
+timez=$(date +%H:%M)
 echo -e "{\"text\":\""$timez"\"}"

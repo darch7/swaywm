@@ -53,7 +53,7 @@
             "default": ["", "墳", ""],
         },
         "scroll-step": 5,
-        "on-click": "gnome-terminal -x alsamixer",
+        "on-click": "alacritty -e alsamixer",
         "tooltip": false
     },
     "custom/storage-root": {
@@ -63,7 +63,7 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage-root.sh",
-        "on-click": "gnome-terminal -x ranger"
+        "on-click": "alacritty -e ranger"
     },
     "custom/storage-home": {
         "format": " {}",
@@ -72,7 +72,7 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage-home.sh",
-        "on-click": "gnome-terminal -x ranger"
+        "on-click": "alacritty -e ranger"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -106,11 +106,13 @@
     "network": {
         "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "interval": 1,
+		"signal": 1,
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-	  "custom/weather": {
+	"custom/weather": {
         "format": "{}",
         "format-alt": "{alt}: {}",
         "format-alt-click": "click-right",
@@ -119,7 +121,7 @@
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
     },
-      "temperature": {
+     "temperature": {
 		//"thermal-zone": 1,
 		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
@@ -127,14 +129,14 @@
 		"format": "{temperatureC}°C ",
 		"interval": 2
 	},
-
-    "custom/teclado": {
-		    "format": "{}  ",
-		    "interval": 1,
-		    "signal": 1,
-		    // bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
-		    "exec": "$HOME/.config/waybar/modules/teclado",
-		    //swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
-		    "tooltip": "false"
-    },
+	 "custom/teclado": {
+		"format": "{}  ",
+		"interval": 1,
+		"signal": 1,
+		// bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
+		"exec": "$HOME/.config/waybar/modules/teclado",
+		//swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
+		"tooltip": "false"
+    },	
+		
 }
