@@ -1,4 +1,12 @@
-font=Dejavu 09
+#	   _____          __          
+# 	 /     \ _____  |  | ______  
+# 	/  \ /  \\__  \ |  |/ /  _ \ 
+#	/    Y    \/ __ \|    <  <_> )
+#	\____|__  (____  /__|_ \____/ 
+# 	       \/     \/     \/      
+#	
+
+font=Meslo NF 09
 
 layer=overlay
 anchor=top-right
@@ -20,5 +28,3 @@ default-timeout=5000
 
 [urgency=high]
 ignore-timeout=1
-
-#00fbff

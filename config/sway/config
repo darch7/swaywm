@@ -118,9 +118,9 @@ hide_edge_borders both
 # reload the configuration file
 bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE DARCH-SAN !!!" 
 
-# set-Tema
+# set-Tema de gnome 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Yaru-Pink-dark'
+    gsettings set $gnome-schema gtk-theme 'materia-cyberpunk-neon'
     gsettings set $gnome-schema icon-theme 'Yaru-Pink'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
@@ -157,7 +157,7 @@ set {
 }
 
 # Set some nice 	         colors		 border	   	background	    text		indicator	   child_border
-client.focused        	 	$elegant	$cyan		$elegant	    $white	   	$cyan
+client.focused        	 	$elegant	$pink		$elegant	    $white	   	$pink
 client.unfocused        	$elegant	$elegant	$orange	     	$white	  	$elegant
 client.focused_inactive 	$elegant   	$elegant  	$acqua	     	$magenta   	$acqua
 client.urgent	          	$elegant	$magenta  	$silver	     	$magenta   	$magenta

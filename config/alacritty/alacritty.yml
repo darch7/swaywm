@@ -1,9 +1,16 @@
+# 	      .__                      .__  __    __          
+#	_____  |  | _____    ___________|__|/  |__/  |_ ___.__.
+#	\__  \ |  | \__  \ _/ ___\_  __ \  \   __\   __<   |  |
+#	 / __ \|  |__/ __ \\  \___|  | \/  ||  |  |  |  \___  |
+#	(____  /____(____  /\___  >__|  |__||__|  |__|  / ____|
+#	     \/          \/     \/                      \/     
+#	
+
 background_opacity: 0.9
 
 
 draw_bold_text_with_bright_colors: true
 
-# Cyberpunk-Neon colours
 colors:
   # Default colours
   primary:
@@ -19,7 +26,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x123e7c'
+    black:   '0x16041f'
     red:     '0xff0000'
     green:   '0x1af4ff'
     yellow:  '0xf57800'
