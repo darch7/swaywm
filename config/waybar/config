@@ -104,7 +104,7 @@
         // "format": "{used} / {total}  "
     },
     "network": {
-        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "interval": 1,
 		"signal": 1,

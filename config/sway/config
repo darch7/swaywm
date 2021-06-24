@@ -45,7 +45,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 set $terminal alacritty
 
 # set lanzador de apps
-set $lanzador wofi -a -I -modi drun --show drun -x 12 -y 20  
+set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20  
 
 # set ide
 set $editor nvim

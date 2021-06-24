@@ -28,6 +28,6 @@ window {
 }
 
 #entry:selected {
-    color: #FFFE3B;
-    background-color: #0a4152;
+    color: #000000;
+    background-color: #FF51DC;
 }
