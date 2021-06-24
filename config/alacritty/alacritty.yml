@@ -27,7 +27,7 @@ font:
     family: FiraCode Nerd Font Mono
     style: Medium,Regular
        
-  size: 12
+  size: 11
 
 # Draw
 draw_bold_text_with_bright_colors: true

@@ -9,7 +9,7 @@
 # Please see https://github.com/swaywm/sway/wiki for a complete reference!
 #
 ###------------------> MODS DE SETEO
-# Mods run xmodmap in terminal for all mods___________________________________________
+# Mods run xmodmap in terminal for all mods
 set $mod Mod4
 set $mod1 Mod1
 floating_modifier $mod
@@ -38,18 +38,25 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 #xwayland disable
 # no DISPLAY environment variable specified
 
-###---------------------------> SETEO DE APPS FAVORITOS__________________________________
+###---------------------------> SETEO DE APPS FAVORITOS
+#####################################################################################################################
 
-# Set your terminal
 #set terminal
 set $terminal alacritty
 
 # set lanzador de apps
 set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20  
 
+# set file explorer
+set $filemanager nautilus
+
+# set browser
+set $browser exec flatpak run com.brave.Browser
+
 # set ide
 set $editor nvim
 
+####################################################################################################################
 ###--------------------------------------> AUTOARRANQUES___
 
 exec export MOZ_ENABLE_WAYLAND=1
@@ -70,7 +77,7 @@ exec lxpolkit
 exec pipewire
 exec mako
 
-####-----------------------------------------------> APPS ATAJOS _____________________________________________
+####-----------------------------------------------> APPS ATAJOS 
 
 # Mako
 bindsym $mod+y exec makoctl dismiss
@@ -86,13 +93,13 @@ bindsym $mod+d exec $lanzador
 bindsym $mod+e exec $terminal -e ranger
 
 # Nautilus
-bindsym $mod+r exec nautilus
+bindsym $mod+r exec $filemanager
 
 # Neovim
 bindsym $mod+shift+n exec $terminal -e $editor
 
 # Browser
-bindsym $mod+w exec flatpak run org.mozilla.firefox
+bindsym $mod+w exec $browser
 
 # Alsamixer
 bindsym $mod+c exec $terminal -e alsamixer
@@ -103,7 +110,7 @@ bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Clien
 # Telegram
 bindsym $mod+t exec flatpak run org.telegram.desktop
 
-###------------------------------------------------------------> Sway-System____________________________________________
+###------------------------------------------------------------> Sway-System
 
 # sway conf gaps
 #for_window [class="^.*"] border pixel 12
@@ -220,7 +227,7 @@ bar {
 # Transparencias
 for_window [class="Spotify"] opacity 0.95
 
-###-----------------------------------------------------------------------> MENU APAGADO_________________________________
+###-----------------------------------------------------------------------> MENU APAGADO
 
 # Shutdown, Reboot, Lock Screen, and Logout
 
@@ -241,7 +248,7 @@ mode $power_mode {
   bindsym Escape    mode "default"
 }
 
-###---------------------------------------------------------------------------------> MULTIMEDIA_______________________________________________
+###---------------------------------------------------------------------------------> MULTIMEDIA
 
 # Pipewire Audio controls
 
@@ -277,7 +284,7 @@ bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png')
 bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
 
-###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS_____________________________________
+###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
 bindsym $mod+p split h
@@ -388,7 +395,7 @@ no_focus [window_role="pop-up"]
 focus_on_window_activation focus
 #for_window [class="(?i)"] focus
 
-###-------------------------------------------------------------------------------------------------------------->_MONITORES_Y RESOLUCIÓN___________________________________________
+###-----------------------------------------------------------------------------------------------------> MONITORES Y RESOLUCIÓN
 
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
@@ -421,7 +428,7 @@ input 1267:35:Elan_Touchpad {
 # Inputs - Get your inputs with the command:
 # swaymsg -t get_inputs
 
-###--------------------------------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT___________________________________________
+###---------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT
 input * {
 	xkb_Layout us,latam
     xkb_variant "intl,"
