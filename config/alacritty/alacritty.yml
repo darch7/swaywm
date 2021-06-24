@@ -6,7 +6,7 @@
 #	     \/          \/     \/                      \/     
 #	
 
-background_opacity: 0.9
+background_opacity: 0.95
 
 # Fonts
 
@@ -27,7 +27,7 @@ font:
     family: FiraCode Nerd Font Mono
     style: Medium,Regular
        
-  size: 11
+  size: 12
 
 # Draw
 draw_bold_text_with_bright_colors: true
@@ -35,7 +35,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colours
   primary:
-    background: '0x00040a'
+    background: '0x00060f'
     foreground: '0x0abdc6'
 
   # Colors that should be used to draw the terminal cursor. If these are unset,
