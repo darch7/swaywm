@@ -89,7 +89,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color:	#8ecde6 ;
-    background: #16041f; 
+    background: #00060f; 
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -141,7 +141,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #dd6699;
-    background: #16041f;  
+    background: #00060f;  
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -155,7 +155,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #d059ff;
-    background: #16041f;  
+    background: #00060f;  
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -169,7 +169,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #8cff7a;
-    background: #16041f;
+    background: #00060f;
     border: 1px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -194,7 +194,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #00b8ff;
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -209,7 +209,7 @@ window#waybar.solo {
     transition: none;
     color:   #8ddb34;
     background: #16041f; 
-    border: 2px solid #5a3172;
+    border: 2px solid #00060f;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
 }
@@ -233,7 +233,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #4f9bf3;
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -247,7 +247,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #00ff9f;
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -261,7 +261,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #ff575a;
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -275,7 +275,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #ffa733;  
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -300,7 +300,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #ffff52;
-    background:	#16041f;
+    background:	#00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;
@@ -333,7 +333,7 @@ window#waybar.solo {
     border-radius: 12px;
     transition: none;
     color: #fca6ac;
-    background: #16041f;
+    background: #00060f;
     border: 2px solid #5a3172;
     border-bottom: 2px solid #5a3172;
     border-top: 2px solid #5a3172;

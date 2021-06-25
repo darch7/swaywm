@@ -60,6 +60,7 @@ set $editor nvim
 ###--------------------------------------> AUTOARRANQUES___
 
 exec export MOZ_ENABLE_WAYLAND=1
+exec export chromium --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland
 exec export QT_QPA_PLATFORM=wayland-egl
 exec export CLUTTER_BACKEND=wayland
 exec export ECORE_EVAS_ENGINE=wayland-egl
