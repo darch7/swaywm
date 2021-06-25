@@ -217,17 +217,3 @@ git push"
 
 # clima
 alias clima="curl -s wttr.in/$LOCATION?lang=es" 
-
-# limpiar commits github
-alias acclean="git checkout --orphan TEMP_BRANCH
-git add -A
-git commit -am "Initial commit"
-git branch -D master
-it branch -m master
-git push -f origin master"
-
-
-
-
-
-
