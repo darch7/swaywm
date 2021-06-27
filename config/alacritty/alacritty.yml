@@ -36,7 +36,7 @@ colors:
   # Default colours
   primary:
     background: '0x00060f'
-    foreground: '0x0abdc6'
+    foreground: '0x69f0f7'
 
   # Colors that should be used to draw the terminal cursor. If these are unset,
   # the cursor colour will be the inverse of the cell colour.
@@ -49,9 +49,9 @@ colors:
   normal:
     black:   '0x16041f'
     red:     '0xff3d3d'
-    green:   '0x1af4ff'
+    green:   '0x69f0f7'
     yellow:  '0xf57800'
-    blue:    '0xFF51DC'
+    blue:    '0xff79c6'
     magenta: '0x711c91'
     cyan:    '0x4dff61'
     white:   '0xd7d7d5'
@@ -60,9 +60,9 @@ colors:
   bright:
     black:   '0x1c61c2'
     red:     '0xff3d3d'
-    green:   '0x1af4ff'
+    green:   '0x69f0f7'
     yellow:  '0xf57800'
-    blue:    '0xFFFE3B'
+    blue:    '0xecf862'
     magenta: '0x711c91'
     cyan:    '0x4dff61'
     white:   '0xd7d7d5'
@@ -71,7 +71,7 @@ colors:
   dim:
     black:   '0x1c61c2'
     red:     '0xff3d3d'
-    green:   '0x1af4ff'
+    green:   '0x69f0f7'
     yellow:  '0xf57800'
     blue:    '0x123e7c'
     magenta: '0x711c91'

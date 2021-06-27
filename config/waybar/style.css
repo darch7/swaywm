@@ -14,7 +14,7 @@
 }
 
 window {
-    color:     #FFFE3B;
+    color:     #ecf862;
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -36,13 +36,13 @@ window#waybar.solo {
 
 #workspaces button {
     transition: none;
-    color:      #e949c3;
+    color:      #fca6ac;
     background: transparent;
     border-radius: 0;
 }
 
 #workspaces button.visible {
-    color:      #9aedfe;
+    color:      #fca6ac;
      border-radius: 3.5;
 }
 

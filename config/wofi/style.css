@@ -1,12 +1,12 @@
 window {
-    border: 5px solid #5a3172;
+    border: 2px solid #69f0f7;
     border-radius: 12px;
     background-color: rgba(0, 6, 15, 0.9); 
 }
 
 #input {
     color: #FFFE3B;
-    border: 2px solid #9aedfe;
+    border: 2px solid #69f0f7;
     border-radius: 12px;
     background-color: rgba(0, 6, 15, 0.9);
     font-size: 18px;
@@ -29,5 +29,5 @@ window {
 
 #entry:selected {
     color: #000000;
-    background-color: #FF51DC;
+    background-color: #fca6ac;
 }

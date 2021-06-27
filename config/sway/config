@@ -51,16 +51,16 @@ set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
 set $filemanager nautilus
 
 # set browser
-set $browser exec flatpak run com.brave.Browser
+set $browser exec flatpak run org.mozilla.firefox
 
 # set ide
 set $editor nvim
 
 ####################################################################################################################
 ###--------------------------------------> AUTOARRANQUES___
-
+#enable for chrome, chromium or brave, for screen sharing
+#exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 > chromium-errors.log 2>&1
 exec export MOZ_ENABLE_WAYLAND=1
-exec export chromium --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland
 exec export QT_QPA_PLATFORM=wayland-egl
 exec export CLUTTER_BACKEND=wayland
 exec export ECORE_EVAS_ENGINE=wayland-egl
@@ -227,6 +227,7 @@ bar {
 
 # Transparencias
 for_window [class="Spotify"] opacity 0.95
+for_window [class="Firefox"] opacity 0.99
 
 ###-----------------------------------------------------------------------> MENU APAGADO
 
