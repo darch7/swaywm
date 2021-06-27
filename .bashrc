@@ -197,7 +197,7 @@ signal=$(cat /proc/net/wireless | awk 'NR==3 {printf "%0.0f%%\n", $3/70*100}')
 # new alert text
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
-export PS1=" ⚡\[\e[36m\]\u\[\e[m\]\[\e[35m\]|→\[\e[m\]\[\e[34m\]\h∞\[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[33m\](\[\e[m\]\[\e[33m\]\w\[\e[m\]\[\e[33m\])\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\] \n\[\e[36m\] >>\[\e[m\] \[\033[0m\]\[\e[1;34m\]\[\e[0;36m\]"
+export PS1=" ⚡\[\e[1;36m\]\u\[\e[m\]\[\e[1;35m\]|→\[\e[m\]\[\e[1;34m\]\h∞\[\e[m\]\[\e[1;31m\]:\[\e[m\]\[\e[1;33m\](\[\e[m\]\[\e[1;33m\]\w\[\e[m\]\[\e[1;33m\])\[\e[m\]\[\e[1;31m\]\`parse_git_branch\`\[\e[m\] \n\[\e[1;36m\] >>\[\e[m\] \[\033[0m\]\[\e[1;34m\]\[\e[0;36m\]"
 
 
 ### Alias 
