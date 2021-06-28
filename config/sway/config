@@ -32,11 +32,10 @@ font pango:
 # Set Wallpeaper
 output * bg /var/home/darch/Pictures/skull.jpg fill
 
-
-exec --no-startup-id /usr/lib/gsd-xsettings
 # Run pure wayland
 #xwayland disable
 # no DISPLAY environment variable specified
+exec --no-startup-id /usr/lib/gsd-xsettings
 
 ###---------------------------> SETEO DE APPS FAVORITOS
 #####################################################################################################################
@@ -110,6 +109,9 @@ bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Clien
 
 # Telegram
 bindsym $mod+t exec flatpak run org.telegram.desktop
+
+# Bluetooh Wofi
+bindsym $mod+Escape exec $HOME/.local/bin/wofi-bluetooth
 
 ###------------------------------------------------------------> Sway-System
 
@@ -289,9 +291,9 @@ bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +
 ###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
-bindsym $mod+p split h
+bindsym $mod+p split h; exec notify-send "Se Lanzará { | } Horizontal La Terminal"
 # Preseleccionar forma de ventana Vertical
-bindsym $mod+shift+p split v
+bindsym $mod+shift+p split v; exec notify-send "Se Lanzará { --- } Vertical La Terminal"
 
 # Cerrar Ventana
 bindsym $mod+q kill
@@ -320,7 +322,7 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # CAMBIAR ENTRE VENTANAS TAB
-bindsym alt+Tab			focus next
+bindsym alt+Tab	focus next
 
 #----------------------------------------------------------
 

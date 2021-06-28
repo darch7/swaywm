@@ -54,7 +54,7 @@
             "default": ["", "墳", ""],
         },
         "scroll-step": 5,
-        "on-click": "alacritty -e alsamixer",
+        "on-click": "amixer set Master toggle",
         "tooltip": false
     },
     "custom/storage-root": {
