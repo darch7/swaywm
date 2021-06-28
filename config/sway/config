@@ -291,9 +291,9 @@ bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +
 ###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
-bindsym $mod+p split h; exec notify-send "Se Lanzará { | } Horizontal La Terminal"
+bindsym $mod+p split h; exec notify-send -t 4000 -i $HOME/.config/mako/logo/H.png "Se Lanzará { | } Horizontal La Terminal"
 # Preseleccionar forma de ventana Vertical
-bindsym $mod+shift+p split v; exec notify-send "Se Lanzará { --- } Vertical La Terminal"
+bindsym $mod+shift+p split v; exec notify-send -t 4000 -i $HOME/.config/mako/logo/V.png "Se Lanzará { --- } Vertical La Terminal"
 
 # Cerrar Ventana
 bindsym $mod+q kill
