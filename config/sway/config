@@ -384,12 +384,12 @@ for_window [window_role="File Operation Progress"] floating enable sticky
 for_window [window_role="Save As"] floating enable
 
 for_window [class="qBittorrent" window_role="pop-up"] floating enable
-for_window [class="gnome-terminal -x alsamixer" window_role="Open"] floating enable
-for_window [class="steam_app.*"] fullscreen enable
-for_window [class="steam_app*"] inhibit_idle focus
+for_window [class="$terminal -e alsamixer" window_role="Open"] floating enable
+#for_window [class="steam_app.*"] fullscreen enable
+#for_window [class="steam_app*"] inhibit_idle focus
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-#for_window [class="VirtualBox"] floating enable
+#for_window [class="Nautilus"] floating enable
 
 # Sticky window
 for_window [instance="file_progress"]  sticky enable
