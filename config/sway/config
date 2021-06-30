@@ -313,7 +313,11 @@ bindsym	$mod+o	layout toggle
 bindsym $mod+s floating toggle
 
 # change layouts
+<<<<<<< HEAD
 bindsym $mod+space focus mode_toggle; exec notify-send -t 4000 -i $HOME/.config/mako/logo/keyboard.png "Se Ha Cambiado El Layout Del Teclado"
+=======
+bindsym $mod+space focus mode_toggle; exec notify-send -t 4000 -i $HOME/.config/mako/logo/V.png "Se A Cambiado El Layout Del Teclado"
+>>>>>>> 7da99f7144360790178837fcabfca8230f2b65cd
  
 # focus the parent container
 #bindsym $mod+a focus parent
