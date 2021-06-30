@@ -26,8 +26,7 @@ set $right l
 seat * hide_cursor 3000
 
 # Fonts
-font pango: Iconsolata 12
-font pango:
+font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
 output * bg /var/home/darch/Pictures/skull.jpg fill
