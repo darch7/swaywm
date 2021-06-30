@@ -26,8 +26,7 @@ set $right l
 seat * hide_cursor 3000
 
 # Fonts
-font pango: Iconsolata 12
-font pango:
+font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
 output * bg /var/home/darch/Pictures/skull.jpg fill
@@ -267,14 +266,16 @@ bindsym $mod+equal exec "amixer set Master 1%+ unmute"
 bindsym $mod+minus exec "amixer set Master 1%- unmute"
 bindsym $mod+Ctrl+minus exec "amixer set Master toggle"
 
-# Sreen brightness controls -- # https://github.com/haikarainen/light
+# Default Keys Brightness
 bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
 bindsym XF86MonBrightnessDown exec "light -U 5"	# decrease screen brightness
+
+# Custom Keys Brightness
 bindsym $mod+shift+equal exec light -A 5    # increase screen brightness
 bindsym $mod+shift+minus exec light -U 5  # decrease screen brightness
 
 # multimedia keys/spotify conf
-# Keys default
+# Keys Default
 bindsym XF86AudioPlay  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioNext  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 bindsym XF86AudioPrev  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
@@ -285,9 +286,8 @@ bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 # screenshot
-bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png')
+bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura" "Se guardará en $HOME"
 bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
-
 ###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
@@ -312,9 +312,9 @@ bindsym	$mod+o	layout toggle
 # toggle tiling / floating
 bindsym $mod+s floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
+# change layouts
+bindsym $mod+space focus mode_toggle; exec notify-send -t 4000 -i $HOME/.config/mako/logo/keyboard.png "Se Ha Cambiado El Layout Del Teclado"
+ 
 # focus the parent container
 #bindsym $mod+a focus parent
 
@@ -383,12 +383,12 @@ for_window [window_role="File Operation Progress"] floating enable sticky
 for_window [window_role="Save As"] floating enable
 
 for_window [class="qBittorrent" window_role="pop-up"] floating enable
-for_window [class="gnome-terminal -x alsamixer" window_role="Open"] floating enable
-for_window [class="steam_app.*"] fullscreen enable
-for_window [class="steam_app*"] inhibit_idle focus
+for_window [class="$terminal -e alsamixer" window_role="Open"] floating enable
+#for_window [class="steam_app.*"] fullscreen enable
+#for_window [class="steam_app*"] inhibit_idle focus
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-#for_window [class="VirtualBox"] floating enable
+#for_window [class="Nautilus"] floating enable
 
 # Sticky window
 for_window [instance="file_progress"]  sticky enable
