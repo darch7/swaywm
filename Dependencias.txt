@@ -2,7 +2,15 @@
 aproveché sus apps y confs de temas por eso los paquetes que ocupos son muy
 pocos. 
 
+########################################################################################
+** Hay dos variantes el Gruvbox y CyberDarch, ambos comparten la misma font por eso no puse la misma font a cada uno. **
+#######################################################################################
+
+install:
+
 rpm-ostree install light mako neovim ranger sway swaylock waybar wofi lxpolkit
 
+----------------------------------------------------------------------------------------------
+las fonts de el .local pegarlo en ~/.local/share/fonts 
 
-las fonts de el .local pegarlo en ~/.local/share/fonts
+NOTA: La font principal de todo el wm se encuentra comprimido, una vez copiado descomprimirlo para que no de errores en la fuente.
