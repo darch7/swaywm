@@ -14,3 +14,145 @@ rpm-ostree install light mako neovim ranger sway swaylock waybar wofi lxpolkit
 las fonts de el .local pegarlo en ~/.local/share/fonts 
 
 NOTA: La font principal de todo el wm se encuentra comprimido, una vez copiado descomprimirlo para que no de errores en la fuente.
+-------------------------------------------------------------------------------------------------------------------
+##ATAJOS:
+
+# movimientos de ventanas 
+super + {h , j , k , l}
+
+# resizear ventanas
+ctrl + shift + {h , j , k , l}
+
+# resizear ventanas con el mouse 
+super + click izq
+
+-----------------------------------------------------------------------------------------------------------------------
+# Apps
+
+# Recargar 
+super + alt + r
+
+# start a terminal
+super + enter 
+
+# start rofi (a program launcher)
+super + d
+
+# Ranger
+super + e
+
+# Nautilus
+super + r
+
+# Neovim
+super + shift + n
+
+# Browser
+super + w
+
+# Alsamixer
+super + c
+
+# Spotify (adblock)
+super + m
+
+# Telegram
+super + t
+
+# Bluetooh Wofi
+siper + esc
+
+-----------------------------------------------------------------------------------------------------------------
+
+# Menu de apagado: 
+ super + shift + q (setea un menu nuevo, apretar solo la letra luego, se vera reflejado en la barra)
+                      { p, poweroff
+                        r, reboot
+                        l, bloqueo de pantalla
+                        q, cerrar session
+                        h, hibernar
+                        s, suspender
+                                      }
+                                      
+-------------------------------------------------------------------------------------------------------------------
+
+# controles multimedia
+
+# en caso de tener teclas dedicadas a sonido ya las detectara automaticamente, pero si no tienes teclas de sonido como yo, usa esas. (lo mismo para el control del brillo y spotify)
+
+# Custom Keys
+
+# subir el volumen
+super + = 
+
+# bajar el volumen 
+super + -
+
+# mute 
+super + ctrl + -
+
+# brillo
+
+#subir brillo
+super + shift + = 
+
+#bajar brillo
+super + shift + - 
+
+
+# controles de spotify
+
+# play
+super + . 
+
+# next
+super + /
+
+# Previous
+super + ,
+
+# screenshot
+
+# captura de toda la pantall
+print
+
+# captura area de pantalla
+shift + print
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# Manejo de ventanas 
+
+# lanzar terminal horizontal
+super + p
+
+# lanzar terminal vertical
+super + shift + p
+
+# cerrar ventana
+super + q
+
+# alternar entre ventanas flotantes y tailing
+super + tab 
+
+# fullscreen mode
+super + f
+
+# layout stacking
+super + u
+
+# layout tabbed
+super + i
+
+# layout toggle
+super + o
+
+# modo floating
+super + s
+
+# cambio de teclado
+super + barra espaciadora
+
+# cambiar entre ventanas en modo tabbed
+alt + tab
+
