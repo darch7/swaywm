@@ -109,7 +109,7 @@ bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Clien
 bindsym $mod+t exec flatpak run org.telegram.desktop
 
 # Bluetooh Wofi
-bindsym $mod+Escape exec $HOME/.local/bin/wofi-bluetooth
+bindsym $mod+Escape exec $HOME/.config/waybar/modules/wofi-bluetooth
 
 ###------------------------------------------------------------> Sway-System
 
@@ -164,12 +164,12 @@ set {
 	#$transparent	#0000007f
 }
 
-# Set some nice 	         colors		 border	   	background	    text		indicator	   child_border
-client.focused        	 	$elegant	$orange		$elegant	    $white	   	$orange
-client.unfocused        	$elegant	$elegant	$orange	     	$white	  	$elegant
-client.focused_inactive 	$elegant   	$elegant  	$acqua	     	$magenta   	$acqua
-client.urgent	          	$elegant	$magenta  	$silver	     	$magenta   	$magenta
-client.placeholder	      	$elegant    $magenta	 $silver	    $white	  	$magenta
+# Set some nice 	         colors		   border	    	background	    text	    	indicator	   child_border
+client.focused        	 	$elegant     $orange		    $elegant	      $white	   	  $orange
+client.unfocused        	$elegant	   $elegant	      $orange	      	$white	  	  $elegant
+client.focused_inactive 	$elegant     $elegant   	  $acqua	      	$magenta   	  $acqua
+client.urgent	          	$elegant	   $magenta       $silver	      	$magenta   	  $magenta
+client.placeholder	      $elegant     $magenta	      $silver	        $white	  	  $magenta
 
 
 # Font for window titles. Will also be used by the bar unless a different font

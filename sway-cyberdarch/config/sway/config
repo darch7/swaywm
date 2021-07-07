@@ -110,7 +110,7 @@ bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Clien
 bindsym $mod+t exec flatpak run org.telegram.desktop
 
 # Bluetooh Wofi
-bindsym $mod+Escape exec $HOME/.local/bin/wofi-bluetooth
+bindsym $mod+Escape exec $HOME/.config/waybar/modules/wofi-bluetooth
 
 ###------------------------------------------------------------> Sway-System
 
