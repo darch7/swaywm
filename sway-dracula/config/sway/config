@@ -128,7 +128,7 @@ bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/
 
 # set-Tema de gnome
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Dracula-pink-accent-slim-standard-buttons'
+    gsettings set $gnome-schema gtk-theme 'Orchis-pink-dark-compact'
     gsettings set $gnome-schema icon-theme 'Yaru-Pink'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
