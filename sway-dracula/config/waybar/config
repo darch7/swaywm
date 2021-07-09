@@ -1,0 +1,143 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "width" : 10,
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode",  "sway/window"],
+    "modules-center": [],
+    "modules-right": [ "custom/weather", "memory", "cpu", "temperature", "pulseaudio", "battery", "backlight", "clock", "custom/time", "network", "custom/teclado" ],
+
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format":"{name}",
+        "disable-scroll-wraparound": true,
+        "enable-bar-scroll": true,
+        "smooth-scrolling-threshold": 30
+    },
+    "sway/window": {
+        "max-length": 20,
+        "format":" {}",
+        "tooltip": false
+    },
+
+    "clock": {
+        //"format": " {:%d.%m.%y %a / W: %V}",
+        "format": " {:%d.%m.%y %a}",
+        "tooltip": false,
+        "on-click": "flatpak run org.gnome.Calendar"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-alt": "{icon} {volume}%",
+        "format-alt-click": "click-right",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "墳", ""],
+        },
+        "scroll-step": 5,
+        "on-click": "amixer set Master toggle",
+        "tooltip": false
+    },
+    "custom/storage-root": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-root.sh",
+        "on-click": "alacritty -e ranger"
+    },
+    "custom/storage-home": {
+        "format": " {}",
+        "format-alt": " {percentage}%",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage-home.sh",
+        "on-click": "alacritty -e ranger"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-alt-click": "click-right",
+        //"format-icons": ["", ""],
+        //"format-icons": ["", ""],
+        "format-icons": ["", ""],
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1"
+    },
+    "custom/time": {
+        "format": " {}",
+        "interval": 5,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/time.sh"
+    },
+    "tray": {
+        "icon-size": 18
+    },
+    "cpu": {
+        "tooltip": false,
+        "on-click": "gnome-system-monitor",
+        "format": " {}%"
+    },
+    "memory": {
+        "tooltip": false,
+        "on-click": "gnome-system-monitor",
+        "format": "力 {}%"
+        // "format": "{used} / {total}  "
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "interval": 1,
+		"signal": 1,
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	"custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1000,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    },
+     "temperature": {
+		//"thermal-zone": 1,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		"format-critical": "{temperatureC}°C ",
+		"format": "{temperatureC}°C ",
+		"interval": 2
+	},
+	 "custom/teclado": {
+		"format": "{}  ",
+		"interval": 1,
+		"signal": 1,
+		// bindsym the grp (switch layout shortcut) option in your sway confik to exec "pkill -SIGRTMIN+1 waybar"
+		"exec": "$HOME/.config/waybar/modules/teclado",
+		//swaymsg -t get_inputs | grep -m1 "xkb_active_layout_name" | cut -d '"' -f4
+		"tooltip": "false"
+    },	
+		
+}
