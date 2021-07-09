@@ -47,12 +47,12 @@ window#waybar.solo {
 }
 
 #workspaces button.focused {
-    border-top: 2px solid #fabd2f;
+    border-top: 2.5px solid #fabd2f;
     color: #fabd2f;
 }
 
 #workspaces button:hover {
-    border-top: 2px solid #fabd2f;
+    border-top: 2.5px solid #fabd2f;
     transition: none;
     box-shadow: inherit;
     text-shadow: inherit;
