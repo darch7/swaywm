@@ -3,7 +3,7 @@ aproveché sus apps y confs de temas por eso los paquetes que ocupos son muy
 pocos. 
 
 ########################################################################################
-** Hay dos variantes el Gruvbox y CyberDarch, ambos comparten la misma font por eso no puse la misma font a cada uno. **
+** Hay dos variantes el Gruvbox, Dracula y CyberDarch, ambos comparten la misma font por eso no puse la misma font a cada uno. **
 #######################################################################################
 
 install:
@@ -35,7 +35,7 @@ super + alt + r
 # start a terminal
 super + enter 
 
-# start rofi (a program launcher)
+# start wofi (a program launcher)
 super + d
 
 # Ranger
