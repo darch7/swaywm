@@ -28,7 +28,7 @@ seat * hide_cursor 3000
 font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
-output * bg /var/home/darch/Pictures/fedora.png fill
+output * bg /var/home/darch/Pictures/dracula.png fill
 
 # Run pure wayland
 #xwayland disable
@@ -48,7 +48,7 @@ set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
 set $filemanager nautilus
 
 # set browser
-set $browser exec flatpak run org.mozilla.firefox
+set $browser exec flatpak run com.brave.Browser
 
 # set ide
 set $editor nvim
@@ -128,8 +128,8 @@ bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/
 
 # set-Tema de gnome
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'klaus'
-    gsettings set $gnome-schema icon-theme 'Yaru-Brown'
+    gsettings set $gnome-schema gtk-theme 'Orchis-pink-dark-compact'
+    gsettings set $gnome-schema icon-theme 'Yaru-Pink'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
     gsettings set $gnome-schema font-name 'Roboto 11'
@@ -165,8 +165,8 @@ set {
 }
 
 # Set some nice 	         colors		   border	    	background	    text	    	indicator	   child_border
-client.focused        	 	$elegant     $orange		    $elegant	      $white	   	  $orange
-client.unfocused        	$elegant	   $elegant	      $orange	      	$white	  	  $elegant
+client.focused        	 	$elegant     $pink		     $elegant	        $white	   	  $pink
+client.unfocused        	$elegant	   $elegant	      $pink	        	$white	  	  $elegant
 client.focused_inactive 	$elegant     $elegant   	  $acqua	      	$magenta   	  $acqua
 client.urgent	          	$elegant	   $magenta       $silver	      	$magenta   	  $magenta
 client.placeholder	      $elegant     $magenta	      $silver	        $white	  	  $magenta
@@ -238,7 +238,7 @@ bindsym $mod+Shift+q      mode $power_mode
 mode $power_mode {
     bindsym p         exec systemctl poweroff
     bindsym r         exec systemctl reboot
-    bindsym l         exec swaylock -i ~/Pictures/lock.jpg , mode "default"
+    bindsym l         exec swaylock -i ~/Pictures/base.png , mode "default"
     bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym h         exec systemctl hibernate
     #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
