@@ -8,7 +8,7 @@ pocos.
 
 install:
 
-rpm-ostree install light mako neovim ranger sway swaylock waybar wofi lxpolkit
+rpm-ostree install light mako neovim ranger sway swaylock waybar wofi lxpolkit kitty
 
 ----------------------------------------------------------------------------------------------
 las fonts de el .local pegarlo en ~/.local/share/fonts 
