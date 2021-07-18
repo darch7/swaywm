@@ -39,7 +39,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 #####################################################################################################################
 
 #set terminal
-set $terminal alacritty
+set $terminal kitty
 
 # set lanzador de apps
 set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
@@ -56,7 +56,7 @@ set $editor nvim
 ####################################################################################################################
 ###--------------------------------------> AUTOARRANQUES___
 #enable for chrome, chromium or brave, for screen sharing
-#exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 > chromium-errors.log 2>&1
+exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 > chromium-errors.log 2>&1
 exec export MOZ_ENABLE_WAYLAND=1
 exec export QT_QPA_PLATFORM=wayland-egl
 exec export CLUTTER_BACKEND=wayland

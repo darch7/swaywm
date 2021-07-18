@@ -39,7 +39,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 #####################################################################################################################
 
 #set terminal
-set $terminal alacritty
+set $terminal kitty
 
 # set lanzador de apps
 set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
@@ -48,7 +48,7 @@ set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
 set $filemanager nautilus
 
 # set browser
-set $browser exec flatpak run org.mozilla.firefox
+set $browser exec flatpak run com.brave.Browser
 
 # set ide
 set $editor nvim
