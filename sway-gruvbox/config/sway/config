@@ -28,7 +28,14 @@ seat * hide_cursor 3000
 font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
-output * bg /var/home/darch/Pictures/fedora.png fill
+# pantalla 1
+output * bg /var/home/darch/Pictures/grubdarch2.png fill
+
+#pantalla 2
+set $wallpeaper /var/home/darch/Pictures/grubdarch2.png fill
+
+#loackscreen
+set $lockscreen /var/home/darch/Pictures/lock.jpg fill
 
 # Run pure wayland
 #xwayland disable
@@ -135,7 +142,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Roboto 11'
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
-    gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
+    gsettings set org.gnome.desktop.default-applications.terminal exec kitty
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
 	set $gnome-schema org.gnome.desktop.interface
 }
@@ -238,7 +245,7 @@ bindsym $mod+Shift+q      mode $power_mode
 mode $power_mode {
     bindsym p         exec systemctl poweroff
     bindsym r         exec systemctl reboot
-    bindsym l         exec swaylock -i ~/Pictures/lock.jpg , mode "default"
+    bindsym l         exec swaylock -i $lockscreen , mode "default"
     bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym h         exec systemctl hibernate
     #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
@@ -402,7 +409,7 @@ focus_on_window_activation focus
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output eDP-1 mode 1366x768@60Hz {
-                background ~/Pictures/lock.jpg fill
+                background $wallpeaper
                 resolution 1366x768
 		scale 1.4
            }
