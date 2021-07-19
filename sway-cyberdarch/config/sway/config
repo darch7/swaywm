@@ -50,7 +50,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 #####################################################################################################################
 
 #set terminal
-set $terminal kitty
+set $terminal alacritty
 
 # set lanzador de apps
 set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20  
@@ -146,7 +146,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Roboto 11'
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
-    gsettings set org.gnome.desktop.default-applications.terminal exec kitty
+    gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
 	set $gnome-schema org.gnome.desktop.interface
 }
