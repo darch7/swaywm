@@ -10,6 +10,10 @@ install:
 
 rpm-ostree install light mako neovim ranger sway swaylock waybar wofi lxpolkit kitty
 
+NOTA: Para kitty-terminal en silverblue te vas a encotrar que no anda en
+toolbox o anda mal, para eso debes instalar un paquete dentro de toolbox (sudo
+dnf install kitty-terminfo -y)
+
 ----------------------------------------------------------------------------------------------
 las fonts de el .local pegarlo en ~/.local/share/fonts 
 
