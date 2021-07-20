@@ -189,11 +189,6 @@ On_White='\e[47m'       # White
 
 NC="\e[m"               # Color Reset
 
-# pront menu
-
-ssid=$(nmcli -t -f name connection show --active)
-signal=$(cat /proc/net/wireless | awk 'NR==3 {printf "%0.0f%%\n", $3/70*100}')
-
 # new alert text
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
