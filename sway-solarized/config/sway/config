@@ -1,0 +1,447 @@
+#                                            .___                    .__
+#  ________  _  _______  ___.__.           __| _/____ _______   ____ |  |__
+# /  ___/\ \/ \/ /\__  \<   |  |  ______  / __ |\__  \\_  __ \_/ ___\|  |  \
+# \___ \  \     /  / __ \\___  | /_____/ / /_/ | / __ \|  | \/\  \___|   Y  \
+#/____  >  \/\_/  (____  / ____|         \____ |(____  /__|    \___  >___|  /
+#     \/               \/\/                   \/     \/            \/     \/
+
+# //computingforgeeks.com/
+# Please see https://github.com/swaywm/sway/wiki for a complete reference!
+#
+###------------------> MODS DE SETEO
+# Mods run xmodmap in terminal for all mods
+set $mod Mod4
+floating_modifier $mod
+#set $mod5 Mod5
+
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Ocultar el mouse
+seat * hide_cursor 3000
+
+# Fonts
+font pango: FiraCode Nerd Font Mono Bold
+
+# Set Wallpeaper
+# pantalla 1
+output * bg /var/home/darch/Pictures/solarizeddarch.png fill
+
+#pantalla 2
+set $wallpeaper /var/home/darch/Pictures/solarizeddarch.png fill
+
+#loackscreen
+set $lockscreen /var/home/darch/Pictures/base.png fill
+
+# Run pure wayland
+#xwayland disable
+# no DISPLAY environment variable specified
+exec --no-startup-id /usr/lib/gsd-xsettings
+
+###---------------------------> SETEO DE APPS FAVORITOS
+#####################################################################################################################
+
+#set terminal
+set $terminal kitty
+
+# set lanzador de apps
+set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
+
+# set file explorer
+set $filemanager nautilus
+
+# set browser
+set $browser exec flatpak run com.brave.Browser
+
+# set ide
+set $editor nvim
+
+####################################################################################################################
+###--------------------------------------> AUTOARRANQUES___
+#enable for chrome, chromium or brave, for screen sharing
+#exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 > chromium-errors.log 2>&1
+exec export MOZ_ENABLE_WAYLAND=1
+exec export QT_QPA_PLATFORM=wayland-egl
+exec export CLUTTER_BACKEND=wayland
+exec export ECORE_EVAS_ENGINE=wayland-egl
+exec export ELM_ENGINE=wayland_egl
+exec export SDL_VIDEODRIVER=wayland
+exec export NO_AT_BRIDGE=1
+exec export `gnome-keyring-daemon --start --components=ssh`
+exec export _JAVA_AWT_WM_NONREPARENTING=1
+exec export QT_AUTO_SCREEN_SCALE_FACTOR=0
+exec export TDESKTOP_DISABLE_GTK_INTEGRATION=1
+exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec export DISPLAY=:0
+exec lxpolkit
+exec pipewire
+exec mako
+
+####-----------------------------------------------> APPS ATAJOS
+
+# Mako
+bindsym $mod+y exec makoctl dismiss
+bindsym $mod+Shift+y exec makoctl dismiss -a
+
+# start a terminal
+bindsym $mod+Return exec $terminal
+
+# start rofi (a program launcher)
+bindsym $mod+d exec $lanzador
+
+# Ranger
+bindsym $mod+e exec $terminal -e ranger
+
+# Nautilus
+bindsym $mod+r exec $filemanager
+
+# Neovim
+bindsym $mod+shift+n exec $terminal -e $editor
+
+# Browser
+bindsym $mod+w exec $browser
+
+# Alsamixer
+bindsym $mod+c exec $terminal -e alsamixer
+
+# Spotify
+bindsym $mod+m exec flatpak run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
+
+# Telegram
+bindsym $mod+t exec flatpak run org.telegram.desktop
+
+# Bluetooh Wofi
+bindsym $mod+Escape exec $HOME/.config/waybar/modules/wofi-bluetooth
+
+###------------------------------------------------------------> Sway-System
+
+# sway conf gaps
+#for_window [class="^.*"] border pixel 12
+gaps inner 4
+gaps outer 4
+smart_gaps on
+default_border pixel 3
+#smart_borders on
+#set $borderwidth 1
+hide_edge_borders both
+
+# reload the configuration file
+bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE DARCH-SAN !!!"
+
+# set-Tema de gnome
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'klaus'
+    gsettings set $gnome-schema icon-theme 'Yaru-Brown'
+    gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
+    gsettings set $gnome-schema document-font-name 'Roboto 11'
+    gsettings set $gnome-schema font-name 'Roboto 11'
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
+    gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
+    gsettings set org.gnome.desktop.default-applications.terminal exec kitty
+    gsettings set org.gnome.desktop.wm.preferences button-layout ''
+	set $gnome-schema org.gnome.desktop.interface
+}
+
+exec "hash dbus-update-activation-environment 2>/dev/null; \
+     dbus-update-activation-environment --all; \
+     dbus-update-activation-environment --systemd; \
+     systemctl --user start sway-session.target"
+
+#exec_always gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+
+
+###### THEMES SWAY BORDER WINDOW ETC
+# Defining colors
+set {
+	$pink		#ff79c6
+	$white		#ffffff
+	$cyan		#00afd7
+	$acqua		#00d787
+	$wine		#72003e
+	$magenta	#d33682
+	$orange		#ff8700
+	$silver		#e4e4e4
+	$elegant	#1b1d1e
+	$transparent	#FF000000
+	#$transparent	#0000007f
+}
+
+# Set some nice 	         colors		   border	    	background	    text	    	    indicator	   child_border
+client.focused        	 	$elegant     $magenta		    $elegant	      $white        $magenta
+client.unfocused        	$elegant	   $elegant	      $magenta	      $white        $elegant
+client.focused_inactive 	$elegant     $elegant   	  $acqua	      	$magenta   	  $acqua
+client.urgent	          	$elegant	   $magenta       $silver	      	$magenta   	  $magenta
+client.placeholder	      $elegant     $magenta	      $silver	        $white	  	  $magenta
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+
+
+# Workspace Variables
+
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws0 "0:零"
+
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+
+##bar
+
+bar {
+  swaybar_command waybar
+  workspace_buttons yes
+}
+
+# Transparencias
+for_window [class="Spotify"] opacity 0.95
+for_window [class="Firefox"] opacity 0.99
+
+###-----------------------------------------------------------------------> MENU APAGADO
+
+# Shutdown, Reboot, Lock Screen, and Logout
+
+set $power_mode "power"
+bindsym $mod+Shift+q      mode $power_mode
+mode $power_mode {
+    bindsym p         exec systemctl poweroff
+    bindsym r         exec systemctl reboot
+    bindsym l         exec swaylock -i $lockscreen , mode "default"
+    bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym h         exec systemctl hibernate
+    #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
+    bindsym s         exec pm-suspend
+
+# Hibernate
+  bindsym $mod+Shift+z exec swaynag -t warning -m 'Sleepy time?!?!' -b 'ZzZz...' 'systemctl hibernate'
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
+}
+
+###---------------------------------------------------------------------------------> MULTIMEDIA
+
+# Pipewire Audio controls
+# Custom Keys Default
+bindsym XF86AudioRaiseVolume exec "amixer -c 0 set Master 1%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -c 0 set Master 1%- unmute"
+bindsym XF86AudioMute exec "amixer -c 0 set Master toggle"
+bindsym XF86AudioMicMute exec "amixer -c 0 set Capture toggle"
+
+# Custom Keys
+bindsym $mod+equal exec "amixer -c 0 set Master 1%+ unmute"
+bindsym $mod+minus exec "amixer -c 0 set Master 1%- unmute"
+bindsym $mod+Ctrl+minus exec "amixer -c 0 set Master toggle"
+
+# Default Keys Brightness
+#bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
+#bindsym XF86MonBrightnessDown exec "light -U 5"	# decrease screen brightness
+
+# Custom Keys Brightness
+bindsym $mod+shift+equal exec light -A 5    # increase screen brightness
+bindsym $mod+shift+minus exec light -U 5  # decrease screen brightness
+
+# multimedia keys/spotify conf
+# Keys Default
+bindsym XF86AudioPlay  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioNext  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioPrev  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+# Custom Keys
+bindsym  $mod+period  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+# screenshot
+bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura" "Se guardará en $HOME"
+bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
+###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
+
+# Preseleccionar forma de ventana Horizontal
+bindsym $mod+p split h; exec notify-send -t 4000 -i $HOME/.config/mako/logo/H.png "Se Lanzará { | } Horizontal La Terminal"
+# Preseleccionar forma de ventana Vertical
+bindsym $mod+shift+p split v; exec notify-send -t 4000 -i $HOME/.config/mako/logo/V.png "Se Lanzará { --- } Vertical La Terminal"
+
+# Cerrar Ventana
+bindsym $mod+q kill
+
+# Cambiar el foco entre ventanas flotantes y tailing
+bindsym $mod+Tab focus mode_toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Switch the current container between different layout styles
+bindsym	$mod+u	layout stacking
+bindsym	$mod+i	layout tabbed
+bindsym	$mod+o	layout toggle
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+
+# change layouts
+bindsym $mod+space focus mode_toggle; exec notify-send -t 4000 -i $HOME/.config/mako/logo/keyboard.png "Se Ha Cambiado El Layout Del Teclado"
+
+# focus the parent container
+#bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# CAMBIAR ENTRE VENTANAS TAB
+bindsym alt+Tab	focus next
+
+#----------------------------------------------------------
+
+# Moving around:
+# Default y seteado
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+#-------------------------------------------------------------
+
+# Alternativo con flechas
+
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#----------------------------------------------------------------
+# Resize/ custom
+bindsym Ctrl+shift+$left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+shift+$down resize grow height 5 px or 5 ppt
+bindsym Ctrl+shift+$up resize shrink height 5 px or 5 ppt
+bindsym Ctrl+shift+$right resize grow width 5 px or 5 ppt
+
+# Default
+bindsym Ctrl+Shift+Left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+Shift+Down resize grow height 5 px or 5 ppt
+bindsym Ctrl+Shift+Up resize shrink height 5 px or 5 ppt
+bindsym Ctrl+Shift+Right resize grow width 5 px or 5 ppt
+
+# Floating windows
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_role="task_dialog|bubble|page-info|Preferences|pop-up"] floating enable
+for_window [window_role="Open Files"] floating enable sticky
+for_window [window_role="File Operation Progress"] floating enable sticky
+for_window [window_role="Save As"] floating enable
+
+for_window [class="qBittorrent" window_role="pop-up"] floating enable
+for_window [class="$terminal -e alsamixer" window_role="Open"] floating enable
+#for_window [class="steam_app.*"] fullscreen enable
+#for_window [class="steam_app*"] inhibit_idle focus
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+#for_window [class="Nautilus"] floating enable
+
+# Sticky window
+for_window [instance="file_progress"]  sticky enable
+for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
+
+# Focus window settings
+no_focus [window_role="pop-up"]
+focus_on_window_activation focus
+#for_window [class="(?i)"] focus
+
+###-----------------------------------------------------------------------------------------------------> MONITORES Y RESOLUCIÓN
+
+# Configure outputs here
+# How to get outputs configurable - $ swaymsg -t get_outputs
+output eDP-1 mode 1366x768@60Hz {
+                background $wallpeaper
+                resolution 1366x768
+		scale 1.4
+           }
+
+## Touchpad
+
+input 1267:35:Elan_Touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+
+# 75Hz + FreeSync
+#output DP-1 adaptive_sync on
+#output DP-1 max_render_time 1
+#output DP-1 mode 2560x1080@75Hz
+
+# Default displays
+#set $left HDMI-A-1
+#set $right DP-1
+#output $left transform 270
+#output $left pos 0 0
+#output $right pos 1080 420
+
+# Inputs - Get your inputs with the command:
+# swaymsg -t get_inputs
+
+###---------------------------------------------------------------------------------------------------------------------> KEYBOARD LAYOUT
+input * {
+	xkb_Layout us,latam
+    xkb_variant "intl,"
+    xkb_options grp:win_space_toggle
+}
+
+exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME DARCH-SAN !" "おかえりなさい! , OKAERINASAI DARCH-SAN !!!"

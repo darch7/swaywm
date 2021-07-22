@@ -1,0 +1,15 @@
+#	               _____.__ 
+#	__  _  _______/ ____\__|
+#	\ \/ \/ /  _ \   __\|  |
+#	 \     (  <_> )  |  |  |
+#	  \/\_/ \____/|__|  |__|
+#	
+                                                
+width=300
+height=200
+insensitive=true
+mode=drun,run
+columns=1
+padding:5
+lines=6
+
