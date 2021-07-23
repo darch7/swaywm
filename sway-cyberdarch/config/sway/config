@@ -49,6 +49,9 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 ###---------------------------> SETEO DE APPS FAVORITOS
 #####################################################################################################################
 
+# SET USERNAME FOR WELCOME AND NOTIFICATION SWAY RELOAD
+set $username DARCH
+
 #set terminal
 set $terminal kitty
 
@@ -138,7 +141,8 @@ default_border pixel 3
 hide_edge_borders both
 
 # reload the configuration file
-bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE DARCH-SAN !!!" 
+bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i
+$HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE $username-SAN !!!" 
 
 # set-Tema de gnome 
 exec_always {
@@ -452,4 +456,5 @@ input * {
     xkb_options grp:win_space_toggle
 }
 
-exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME DARCH-SAN !" "おかえりなさい! , OKAERINASAI DARCH-SAN !!!"
+exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME
+$username-SAN !" "おかえりなさい! , OKAERINASAI $username-SAN !!!"
