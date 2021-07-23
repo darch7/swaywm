@@ -54,6 +54,9 @@ super + shift + n
 # Browser
 super + w
 
+# Brave Private Tor
+super + shift + w 
+
 # Alsamixer
 super + c
 
