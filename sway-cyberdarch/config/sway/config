@@ -29,14 +29,11 @@ seat * hide_cursor 3000
 font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
-output * bg /var/home/darch/Pictures/skull.jpg fill
-
-# Set Wallpeaper
 # pantalla 1
-output * bg /var/home/darch/Pictures/skull.jpg fill
+output * bg /var/home/darch/Pictures/cyberdarch.png fill
 
 #pantalla 2
-set $wallpeaper /var/home/darch/Pictures/skull.jpg fill
+set $wallpeaper /var/home/darch/Pictures/cyberdarch.conf fill
 
 #loackscreen
 set $lockscreen /var/home/darch/Pictures/skull.jpg fill
@@ -420,11 +417,32 @@ focus_on_window_activation focus
 
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
-output eDP-1 mode 1366x768@60Hz {
+output LVDS-1 mode 1366x768@60Hz {
                 background $wallpeaper
                 resolution 1366x768
-		scale 1.4
+		scale 0
            }
+
+# Configure outputs here
+# How to get outputs configurable - $ swaymsg -t get_outputs
+output VGA-1 mode 1366x768@60Hz {
+                background $wallpeaper
+                resolution 1366x768
+		scale 0
+           }
+
+
+# Default displays
+set $dleft LVDS-1
+set $dright VGA-1
+
+### Outputs
+output LVDS-1 pos 0 0 res 1366x768
+output VGA-1 pos 1366 0 res 1366x768
+
+# Main screen
+#output eDP-1 pos 4000 1000 res 2000x3000 scale 2 transform 90 subpixel vrgb
+
 
 ## Touchpad
 
@@ -438,13 +456,6 @@ input 1267:35:Elan_Touchpad {
 #output DP-1 adaptive_sync on
 #output DP-1 max_render_time 1
 #output DP-1 mode 2560x1080@75Hz
-
-# Default displays
-#set $left HDMI-A-1
-#set $right DP-1
-#output $left transform 270
-#output $left pos 0 0
-#output $right pos 1080 420
 
 # Inputs - Get your inputs with the command:
 # swaymsg -t get_inputs
