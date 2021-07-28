@@ -203,6 +203,15 @@ alias ac="rpm-ostree update && flatpak update -y"
 # Limpiar el Silverblue
 alias cl="rpm-ostree cleanup -b -m"
 
+# Install
+alias ins="rpm-ostree install"
+
+# Remove
+alias rem="rpm-ostree remove"
+
+# Remove override
+alias remov="rpm-ostree override remove"
+
 # Actualizar Git
 alias acgit="git init
 git add --all

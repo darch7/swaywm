@@ -148,6 +148,7 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 11'
     gsettings set $gnome-schema document-font-name 'Roboto 11'
     gsettings set $gnome-schema font-name 'Roboto 11'
+    gsettings set org.gnome.nautilus.preferences always-use-location-entry true
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gtk.Settings.FileChooser window-size '(1100,700)'
     gsettings set org.gnome.desktop.default-applications.terminal exec kitty
