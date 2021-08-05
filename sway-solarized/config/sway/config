@@ -137,8 +137,7 @@ default_border pixel 3
 hide_edge_borders both
 
 # reload the configuration file
-bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i
-$HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE $username-SAN !!!"
+bindsym $mod+Alt+r reload ; exec notify-send -t 7000 -i $HOME/.config/mako/logo/anime.png "SWAY RECONTRA RECARGADO" "揺れリロード！, MATA NEEEEE $username-SAN !!!"
 
 # set-Tema de gnome
 exec_always {
@@ -299,8 +298,19 @@ bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 # screenshot
-bindsym Print exec grim -t png $HOME/$(date +'D-shot_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura" "Se guardará en $HOME"
-bindsym Shift+Print exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
+
+set $screenshot_mode "Screenshot"
+bindsym $mod+shift+Print      mode $screenshot_mode
+mode $screenshot_mode {
+
+    bindsym h         exec grim -o LVDS-1 $HOME/$(date +'D-shot-LVSD_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De LVSD-1" "Se guardará en $HOME"
+    bindsym l         exec  grim -o HDMI-A-1 $HOME/$(date +'D-shot-HDMI_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De HDMI-A-1" "Se guardará en $HOME"
+    bindsym f         exec grim -t png $HOME/$(date +'D-shot-Fullscreen_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De Todos Los Monitores" "Se guardará en $HOME"
+    bindsym a         exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 ###-----------------------------------------------------------------------------------------------> MANEJO DE VENTANAS
 
 # Preseleccionar forma de ventana Horizontal
