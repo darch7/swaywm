@@ -478,5 +478,4 @@ input * {
     xkb_options grp:win_space_toggle
 }
 
-exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME
-$username-SAN !" "おかえりなさい! , OKAERINASAI $username-SAN !!!"
+exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME $username-SAN !" "おかえりなさい! , OKAERINASAI $username-SAN !!!"
