@@ -302,7 +302,7 @@ bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 # screenshot
 
 set $screenshot_mode "Screenshot"
-bindsym $mod+shift+Print      mode $screenshot_mode
+bindsym $mod+Alt+p      mode $screenshot_mode
 mode $screenshot_mode {
 
     bindsym h         exec grim -o LVDS-1 $HOME/$(date +'D-shot-LVSD_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De LVSD-1" "Se guardará en $HOME"
