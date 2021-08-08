@@ -3,7 +3,7 @@ aproveché sus apps y confs de temas por eso los paquetes que ocupos son muy
 pocos. 
 
 ########################################################################################
-** Hay dos variantes el Gruvbox, Dracula y CyberDarch, ambos comparten la misma font por eso no puse la misma font a cada uno. **
+** Hay dos variantes el Gruvbox, Dracula, Solarized y CyberDarch, ambos comparten la misma font por eso no puse la misma font a cada uno. **
 #######################################################################################
 
 install:
@@ -79,6 +79,7 @@ siper + esc
                         q, cerrar session
                         h, hibernar
                         s, suspender
+                        Esc, salir del menú
                                       }
                                       
 -------------------------------------------------------------------------------------------------------------------
@@ -120,12 +121,16 @@ super + ,
 
 # screenshot
 
-# captura de toda la pantall
-print
+# Menu de capturador de pantalla
 
-# captura area de pantalla
-shift + print
-
+super + Alt + p (setea un menu nuevo, apretar solo la letra luego, se vera reflejado en la barra)
+                      { a, capturador área
+                        h, captura monitor LVSD (monitor izquierdo)
+                        l, captura monitor HDMI (monitor derecho)
+                        f, captura fullscreen (ambos monitores en una sola img)
+                        Esc, salir del menú
+                                      }
+                                      
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # Manejo de ventanas 
