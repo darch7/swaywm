@@ -33,7 +33,7 @@ font pango: FiraCode Nerd Font Mono Bold
 output * bg /var/home/darch/Pictures/cyberdarch.png fill
 
 #pantalla 2
-set $wallpeaper /var/home/darch/Pictures/cyberdarch.conf fill
+set $wallpeaper /var/home/darch/Pictures/cyberdarch.png fill
 
 #loackscreen
 set $lockscreen /var/home/darch/Pictures/skull.jpg fill
