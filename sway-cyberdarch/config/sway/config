@@ -30,13 +30,13 @@ font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
 # pantalla 1
-output * bg /var/home/darch/Pictures/cyberdarch.png fill
+output * bg /var/home/darch/.config/walls/cyberdarch.png fill
 
 #pantalla 2
-set $wallpeaper /var/home/darch/Pictures/cyberdarch.png fill
+set $wallpeaper /var/home/darch/.config/walls/cyberdarch.png fill
 
 #loackscreen
-set $lockscreen /var/home/darch/Pictures/skull.jpg fill
+set $lockscreen /var/home/darch/.config/walls/skull.jpg fill
 
 # Run pure wayland
 #xwayland disable
