@@ -82,6 +82,7 @@ exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
 exec lxpolkit
+exec wireplumber
 exec pipewire
 exec mako
 
@@ -268,15 +269,15 @@ mode $power_mode {
 
 # Pipewire Audio controls
 # Custom Keys Default
-bindsym XF86AudioRaiseVolume exec "amixer -c 0 set Master 1%+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -c 0 set Master 1%- unmute"
-bindsym XF86AudioMute exec "amixer -c 0 set Master toggle"
-bindsym XF86AudioMicMute exec "amixer -c 0 set Capture toggle"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 1%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer set Master 1%- unmute"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
 # Custom Keys
-bindsym $mod+equal exec "amixer -c 0 set Master 1%+ unmute"
-bindsym $mod+minus exec "amixer -c 0 set Master 1%- unmute"
-bindsym $mod+Ctrl+minus exec "amixer -c 0 set Master toggle"
+bindsym $mod+equal exec "amixer set Master 1%+ unmute"
+bindsym $mod+minus exec "amixer set Master 1%- unmute"
+bindsym $mod+Ctrl+minus exec "amixer set Master toggle"
 
 # Default Keys Brightness
 #bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
