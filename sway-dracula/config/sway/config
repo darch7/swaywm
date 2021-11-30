@@ -82,6 +82,7 @@ exec export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec export DISPLAY=:0
 exec lxpolkit
+exec wireplumber
 exec pipewire
 exec mako
 
