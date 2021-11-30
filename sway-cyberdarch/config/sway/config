@@ -84,6 +84,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec export DISPLAY=:0
 exec lxpolkit
 exec pipewire
+exec wireplumber
 exec mako
 
 ####-----------------------------------------------> APPS ATAJOS 
