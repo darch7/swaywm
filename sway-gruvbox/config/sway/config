@@ -475,4 +475,16 @@ input * {
     xkb_options grp:win_space_toggle
 }
 
+#MODO MAQUINA VIRTUAL
+seat * shortcuts_inhibitor disable
+
+# mode: hotkeygrab
+set $mode_hotkeygrab Modo Maquina Virtual: (Mod+Shift+z) para salir del modo.
+bindsym $mod+Shift+z mode "$mode_hotkeygrab"
+mode "$mode_hotkeygrab" {
+
+  # back to normal: mod+Shift+z
+  bindsym $mod+Shift+z mode "default"
+}
+
 exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME $username-SAN !" "おかえりなさい! , OKAERINASAI $username-SAN !!!"
