@@ -19,7 +19,14 @@ las fonts de el .local pegarlo en ~/.local/share/fonts
 
 NOTA: La font principal de todo el wm se encuentra comprimido, una vez copiado descomprimirlo para que no de errores en la fuente.
 -------------------------------------------------------------------------------------------------------------------
-##ATAJOS:
+
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+
+#########ATAJOS:
 
 # movimientos de ventanas 
 super + {h , j , k , l}
@@ -168,3 +175,12 @@ super + barra espaciadora
 # cambiar entre ventanas en modo tabbed
 alt + tab
 
+---------------------------------------------------------------------------------------------------------
+
+# Modo maquina virtual (para poder usar maquinas virtuales como kvm y que las teclas respondan solamente al la maquina virtualizada y se desligue de la maquina host, para desactivar apretar exactamente lo mismo sino la maquina host no repondera a las teclas adecuadamente.)
+
+super + shift + z 
+
+# Esconder/mostrar waybar
+
+shift + espacio
