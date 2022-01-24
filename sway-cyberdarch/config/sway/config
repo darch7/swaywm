@@ -489,4 +489,8 @@ mode "$mode_hotkeygrab" {
   bindsym $mod+Shift+z mode "default"
 }
 
+#Waybar ocultar/mostrar
+bindsym Shift+Space exec killall -SIGUSR1 waybar
+
+#Saludo de inicio de sesion
 exec notify-send -t 10000 -i $HOME/.config/mako/logo/inicio.png "WELCOME $username-SAN !" "おかえりなさい! , OKAERINASAI $username-SAN !!!"
