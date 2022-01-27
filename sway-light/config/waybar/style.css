@@ -1,0 +1,340 @@
+
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   FuraCode Nerd Font;
+    font-size:     14px;
+    font-weight:     bold;
+    box-shadow:    none;
+    text-shadow:   none;
+    background: rgba(255, 255, 255, 0);
+    transition-duration: 0s;
+    min-width:  2px;
+    min-height: 2px;
+}
+
+window {
+    color:     #212121;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+window#waybar.solo {
+    background: rgba(255, 255, 255, 0);
+
+}
+
+#workspaces {
+    border-radius: 12px;
+    background: #cfc4bf;
+    transition: none;
+    border: 2px solid #9AA0A7;
+    border-bottom: 2px solid #9AA0A7;
+
+
+}
+
+#workspaces button {
+    transition: none;
+    color:      #AE8946;
+    background: transparent;
+    border-radius: 0;
+}
+
+#workspaces button.visible {
+    color:      #AE8946;
+     border-radius: 3.5;
+}
+
+#workspaces button.focused {
+    border-top: 2.5px solid #2D2423;
+    color: #2D2423;
+}
+
+#workspaces button:hover {
+    border-top: 2.5px solid #2D2423;
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #2D2423;
+
+}
+
+#workspaces button.urgent {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #temperature, #custom-spotify, #custom-weather, #custom-mail, #custom-teclado {
+    margin:     0px 2px 0px 2px;
+
+}
+
+#custom-notif {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 12px;
+    transition: none;
+    color: #4d4d4d;
+    background: rgb(238,130,238);
+
+}
+
+#backlight {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color:	#2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#battery.warning {
+   color:       rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#custom-tidepool {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 12px;
+    transition: none;
+    color: #4d4d4d;
+}
+
+#custom-tidepool.red {
+    background: rgba(205, 92, 92, 0.85);
+}
+
+#custom-tidepool.orange {
+    background: rgba(243, 156, 18, 0.85);
+}
+
+#custom-tidepool.yellow {
+    background: rgba(252, 214, 112, 0.85);
+}
+
+#custom-tidepool.green {
+    background: rgba(154, 205, 50, 0.85);
+}
+
+#clock {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-time {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-weather {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-unsync {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color: #4d4d4d;
+    background: rgba(154, 237, 254, 0.85);
+}
+
+#custom-storage-home {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-storage-root {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color:   #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-snapcount {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
+    transition: none;
+    color: #4d4d4d;
+    background: rgba(154, 237, 254, 0.85);
+}
+
+#pulseaudio {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#network {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#cpu {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#temperature {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#battery {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
+    transition: none;
+    color: #4d4d4d;
+    background: rgba(176, 196, 222, 0.85);
+}
+
+#memory {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background:	#cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
+
+#custom-spotify {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: rgba(119, 136, 153, 0.85);
+}
+
+#custom-storage.warning {
+    color:      rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+    color:      rgba(238, 46, 36, 1);
+}
+
+#custom-teclado {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 12px;
+    transition: none;
+    color: #2D2423;
+    background: #cfc4bf;
+    border: 2px solid #848c94;
+    border-bottom: 2px solid #848c94;
+    border-top: 2px solid #848c94;
+}
