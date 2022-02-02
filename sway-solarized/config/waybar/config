@@ -105,10 +105,11 @@
         // "format": "{used} / {total}  "
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-        "interval": 1,
-		"signal": 1,
+    	"interface": "wlp4s0",
+        "format-wifi": " {essid} || ({bandwidthDownOctets} )",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr} || ({bandwidthDownOctets} ))",
+        "interval": 3,
+	"signal": 1,
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
