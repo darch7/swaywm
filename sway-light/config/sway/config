@@ -247,7 +247,7 @@ for_window [class="Firefox"] opacity 0.99
 
 # Shutdown, Reboot, Lock Screen, and Logout
 
-set $power_mode "power"
+set $power_mode "|| Menu Apagado: (p) poweroff, (r) reboot (q) quit sesion, (l) lockscreen ||"
 bindsym $mod+Shift+q      mode $power_mode
 mode $power_mode {
     bindsym p         exec systemctl poweroff
@@ -300,7 +300,7 @@ bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 # screenshot
 
-set $screenshot_mode "Screenshot"
+set $screenshot_mode "|| Screenshot: (h) monitor izq, (l) monitor der, (f) fullscreen, (a) area ||"
 bindsym $mod+Alt+p      mode $screenshot_mode
 mode $screenshot_mode {
 
