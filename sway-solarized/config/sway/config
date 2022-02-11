@@ -425,9 +425,9 @@ focus_on_window_activation focus
 
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
-output LVDS-1 mode 1366x768@60Hz {
+output DP-1 mode 1920x1080@60Hz {
                 background $wallpeaper
-                resolution 1366x768
+                resolution 1920x1080 
 		scale 0
            }
 
@@ -441,12 +441,12 @@ output HDMI-A-1 mode 1920x1080@60Hz {
 
 
 # Default displays
-set $dleft LVDS-1
-set $dright HDMI-A-1
+set $dleft HDMI-A-1
+set $dright DP-1
 
 ### Outputs
-output LVDS-1 pos 0 0 res 1366x768
-output HDMI-A-1 pos 1366 0 res 1920x1080
+output DP-1 pos 1920 0 res 1920x1080
+output HDMI-A-1 pos 0 0 res 1920x1080
 
 # Main screen
 #output eDP-1 pos 4000 1000 res 2000x3000 scale 2 transform 90 subpixel vrgb
