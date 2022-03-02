@@ -66,7 +66,7 @@ set $editor nvim
 ####################################################################################################################
 ###--------------------------------------> AUTOARRANQUES___
 #enable for chrome, chromium or brave, for screen sharing
-#exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 > chromium-errors.log 2>&1
+#exec export chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-logging =stderr --v=1 
 exec export MOZ_ENABLE_WAYLAND=1
 exec export QT_QPA_PLATFORM=wayland-egl
 exec export CLUTTER_BACKEND=wayland
@@ -191,45 +191,42 @@ client.placeholder	      $elegant     $magenta	      $silver	        $white	  	 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
+##workspaces
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
 
-# Workspace Variables
-
-set $ws1 "1:一"
-set $ws2 "2:二"
-set $ws3 "3:三"
-set $ws4 "4:四"
-set $ws5 "5:五"
-set $ws6 "6:六"
-set $ws7 "7:七"
-set $ws8 "8:八"
-set $ws9 "9:九"
-set $ws0 "0:零"
-
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output HDMI-A-1
+workspace 9 output HDMI-A-1
+workspace 0 output HDMI-A-1
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0
-
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 0
 
 ##bar
 
