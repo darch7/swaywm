@@ -109,7 +109,7 @@ bindsym $mod+shift+n exec $terminal -e $editor
 bindsym $mod+w exec $browser
 
 # Brave incognito tor
-bindsym $mod+shift+w exec flatpak run com.brave.Browser --incognito --tor
+bindsym $mod+shift+w exec flatpak run com.brave.Browser --incognito 
 
 # Alsamixer
 bindsym $mod+c exec $terminal -e alsamixer
