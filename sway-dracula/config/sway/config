@@ -29,10 +29,10 @@ font pango: FiraCode Nerd Font Mono Bold
 
 # Set Wallpeaper
 # pantalla 1
-output * bg /var/home/darch/.config/walls/draculadarch.png fill
+set $wallpeaper1 /var/home/darch/.config/walls/draculadarch.png fill
 
 #pantalla 2
-set $wallpeaper /var/home/darch/.config/walls/draculadarch.png fill
+set $wallpeaper2 /var/home/darch/.config/walls/draculadarch.png fill
 
 #loackscreen
 set $lockscreen /var/home/darch/.config/walls/base.png fill
@@ -422,7 +422,7 @@ focus_on_window_activation focus
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output DP-1 mode 1920x1080@60Hz {
-                background $wallpeaper
+                background $wallpeaper2
                 resolution 1920x1080 
 		scale 0
            }
@@ -430,15 +430,11 @@ output DP-1 mode 1920x1080@60Hz {
 # Configure outputs here
 # How to get outputs configurable - $ swaymsg -t get_outputs
 output HDMI-A-1 mode 1920x1080@60Hz {
-                background $wallpeaper
+                background $wallpeaper1
                 resolution 1920x1080
 		scale 0
            }
 
-
-# Default displays
-set $dleft HDMI-A-1
-set $dright DP-1
 
 ### Outputs
 output DP-1 pos 1920 0 res 1920x1080
