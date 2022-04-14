@@ -300,10 +300,16 @@ set $screenshot_mode "|| Screenshot: (h) monitor izq, (l) monitor der, (f) fulls
 bindsym $mod+Alt+p      mode $screenshot_mode
 mode $screenshot_mode {
 
-    bindsym h         exec grim -o HDMI-A-1 $HOME/$(date +'D-shot-HDMI_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De HDMI-A-1" "Se guardará en $HOME"
-    bindsym l         exec  grim -o DP-1 $HOME/$(date +'D-shot-DP_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De DP-1" "Se guardará en $HOME"
-    bindsym f         exec grim -t png $HOME/$(date +'D-shot-Fullscreen_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De Todos Los Monitores" "Se guardará en $HOME"
-    bindsym a         exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png')
+	bindsym h         exec grim -o HDMI-A-1 - | wl-copy ; exec notify-send -t 4000 -i $HOME/.config/mako/logo/3.png "Se Ha Hecho Una Captura Fullscreen De HDMI-A-1 (EN CLIPBOARD)"
+    bindsym l         exec  grim -o DP-1 - | wl-copy ; exec notify-send -t 4000 -i $HOME/.config/mako/logo/3.png "Se Ha Hecho Una Captura Fullscreen De DP-1 (EN CLIPBOARD)" 
+    bindsym f         exec grim - | wl-copy ; exec notify-send -t 4000 -i $HOME/.config/mako/logo/3.png "Se Ha Hecho Una Captura Fullscreen (EN CLIPBOARD)" 
+    bindsym a         exec grim -g "$(slurp)" - | wl-copy ; exec notify-send -t 6000 -i $HOME/.config/mako/logo/3.png "Se Ha Hecho Una Captura De Area (EN CLIPBOARD)" 
+    
+    bindsym shift+h         exec grim -o HDMI-A-1 $HOME/$(date +'D-shot-HDMI_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De HDMI-A-1" "Se guardará en $HOME"
+    bindsym shift+l         exec  grim -o DP-1 $HOME/$(date +'D-shot-DP_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen De DP-1" "Se guardará en $HOME"
+    bindsym shift+f         exec grim -t png $HOME/$(date +'D-shot-Fullscreen_%Y-%m-%d-%H%M%S.png'); exec notify-send -t 4000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura Fullscreen" "Se guardará en $HOME"
+    bindsym shift+a         exec --no-startup-id slurp | grim -t png -g - $HOME/$(date +'Area-D-shot_%Y-%m-%d-%H%M%S.png') ; exec notify-send -t 6000 -i $HOME/.config/mako/logo/screenshot.png "Se Ha Hecho Una Captura De Area (EN CLIPBOARD)" 
+      
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
