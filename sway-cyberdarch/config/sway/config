@@ -248,7 +248,7 @@ mode $power_mode {
     bindsym p         exec systemctl poweroff
     bindsym r         exec systemctl reboot
     bindsym l         exec swaylock -i $lockscreen, mode "default"
-    bindsym q         exec swaynag -t warning -m 'Do you really want to exit sway' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym q         exec swaynag -t warning -m 'Quiere realmente salir de sway' -b 'SI, quiero salir de sway' 'swaymsg exit'
     bindsym h         exec systemctl hibernate
     #bindsym s        exec sudo  /lib/systemd/systemd-sleep hybrid-sleep
     bindsym s         exec pm-suspend
@@ -296,7 +296,8 @@ bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 # screenshot
 
 set $screenshot_mode "|| Screenshot: (h) monitor izq, (l) monitor der, (f) fullscreen, (a) area ||"
-bindsym $mod+Alt+p      mode $screenshot_mode
+bindsym $mod+Alt+p      mode $screenshot_mode ; exec notify-send -t 3000 -i $HOME/.config/mako/logo/2.png "AH ENTRADO AL MENU SCREENSHOT"
+
 mode $screenshot_mode {
 
 	bindsym h         exec grim -o HDMI-A-1 - | wl-copy ; exec notify-send -t 4000 -i $HOME/.config/mako/logo/3.png "Se Ha Hecho Una Captura Fullscreen De HDMI-A-1 (EN CLIPBOARD)"
