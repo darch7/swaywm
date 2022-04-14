@@ -131,10 +131,16 @@ super + ,
 # Menu de capturador de pantalla
 
 super + Alt + p (setea un menu nuevo, apretar solo la letra luego, se vera reflejado en la barra)
-                      { a, capturador área
-                        h, captura monitor LVSD (monitor izquierdo)
-                        l, captura monitor HDMI (monitor derecho)
-                        f, captura fullscreen (ambos monitores en una sola img)
+                      { a, capturador área (CLIPBOARD)
+                        h, captura monitor LVSD (monitor izquierdo) (CLIPBOARD)
+                        l, captura monitor HDMI (monitor derecho) (CLIPBOARD)
+                        f, captura fullscreen (ambos monitores en una sola img) (CLIPBOARD)
+                        
+                        shift+a, capturador área (GUARDAR CAPTURA) EN HOME)
+                        shift+h, captura monitor LVSD (monitor izquierdo) (GUARDAR CAPTURA) EN HOME)
+                        shift+l, captura monitor HDMI (monitor derecho) (GUARDAR CAPTURA) EN HOME)
+                        shift+f, captura fullscreen (ambos monitores en una sola img) (GUARDAR CAPTURA) EN HOME)
+                                                
                         Esc, salir del menú
                                       }
                                       
