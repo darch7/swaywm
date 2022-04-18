@@ -26,7 +26,7 @@ set $right l
 seat * hide_cursor 3000
 
 # Fonts
-font pango: FiraCode Nerd Font Mono Bold
+font pango: FiraCode Nerd Font Mono Bold 12
 
 # Set Wallpeaper
 # pantalla 1
