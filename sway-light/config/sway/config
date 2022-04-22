@@ -271,17 +271,17 @@ bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioMicMute exec "amixer set Capture toggle"
 
 # Custom Keys
-bindsym $mod+equal exec "amixer set Master 1%+ unmute"
-bindsym $mod+minus exec "amixer set Master 1%- unmute"
-bindsym $mod+Ctrl+minus exec "amixer set Master toggle"
+#bindsym $mod+equal exec "amixer set Master 1%+ unmute"
+#bindsym $mod+minus exec "amixer set Master 1%- unmute"
+#bindsym $mod+Ctrl+minus exec "amixer set Master toggle"
 
 # Default Keys Brightness
 bindsym XF86MonBrightnessUp exec "light -A 5"  # increase screen brightness
 bindsym XF86MonBrightnessDown exec "light -U 5"	# decrease screen brightness
 
 # Custom Keys Brightness
-bindsym $mod+shift+equal exec light -A 5    # increase screen brightness
-bindsym $mod+shift+minus exec light -U 5  # decrease screen brightness
+#bindsym $mod+shift+equal exec light -A 5    # increase screen brightness
+#bindsym $mod+shift+minus exec light -U 5  # decrease screen brightness
 
 # multimedia keys/spotify conf
 # Keys Default
@@ -290,9 +290,9 @@ bindsym XF86AudioNext  exec "dbus-send --print-reply --dest=org.mpris.MediaPlaye
 bindsym XF86AudioPrev  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 # Custom Keys
-bindsym  $mod+period  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+#bindsym  $mod+period  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+#bindsym  $mod+slash  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+#bindsym  $mod+comma  exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
 # screenshot
 
