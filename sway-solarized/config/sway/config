@@ -58,7 +58,7 @@ set $lanzador wofi -a -b -I -modi drun --show drun -x 12 -y 20
 set $filemanager nautilus
 
 # set browser
-set $browser exec flatpak run com.brave.Browser  
+set $browser exec firefox  
 
 # set ide
 set $editor nvim
@@ -109,7 +109,7 @@ bindsym $mod+shift+n exec $terminal -e $editor
 bindsym $mod+w exec $browser
 
 # Brave incognito tor
-bindsym $mod+shift+w exec flatpak run com.brave.Browser --incognito  
+bindsym $mod+shift+w exec firefox --private-window 
 
 # Alsamixer
 bindsym $mod+c exec $terminal -e alsamixer
