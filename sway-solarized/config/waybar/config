@@ -117,7 +117,7 @@
         // "format": "{used} / {total}  "
     },
     "network": {
-    	"interface": "wlp4s0",
+    	"interface": "wlp5s0",
         "format-wifi": " {essid} || ({bandwidthDownOctets} )",
         "format-ethernet": " {ifname}: {ipaddr}/{cidr} || ({bandwidthDownOctets} ))",
         "interval": 3,
